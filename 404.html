@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — 페이지를 찾을 수 없습니다 | Nextep Dynamics</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #05050a;
+            --text-primary: #f8f8fb;
+            --text-secondary: #a0a0b0;
+            --accent-color: #00e5ff;
+            --glass-border: rgba(255,255,255,0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            height: 100%;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Noto Sans KR', sans-serif;
+            overflow: hidden;
+        }
+        canvas#bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .page {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        .nav-logo {
+            position: fixed;
+            top: 1.8rem;
+            left: 2rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .nav-logo span { color: var(--accent-color); }
+        .error-code {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(7rem, 20vw, 14rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -4px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: glitch 3s infinite;
+        }
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); filter: none; }
+            92% { transform: translate(-3px, 1px); filter: hue-rotate(30deg); }
+            94% { transform: translate(3px, -1px); filter: hue-rotate(-30deg); }
+            96% { transform: translate(-2px, 2px); }
+        }
+        .robot-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .error-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .error-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 480px;
+            margin: 0 auto 2.5rem;
+        }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--accent-color);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0,229,255,0.25);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 28px rgba(0,229,255,0.4); }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+        }
+        .btn-secondary:hover { border-color: var(--accent-color); color: var(--accent-color); transform: translateY(-3px); }
+        .countdown {
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .countdown span { color: var(--accent-color); font-weight: 700; }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <a href="index.html" class="nav-logo" aria-label="홈으로 이동">NEXTEP<span>DYNAMICS</span></a>
+
+    <main class="page" role="main">
+        <div class="robot-icon" aria-hidden="true">🤖</div>
+        <div class="error-code" aria-label="404 오류">404</div>
+        <h1 class="error-title">페이지를 찾을 수 없습니다</h1>
+        <p class="error-desc">
+            요청하신 페이지가 존재하지 않거나, 이동되었거나, 삭제되었습니다.<br>
+            로봇도 가끔 길을 잃습니다 — 홈으로 돌아가 보세요!
+        </p>
+        <div class="btn-group">
+            <a href="index.html" class="btn btn-primary">
+                🏠 홈으로 돌아가기
+            </a>
+            <a href="board.html" class="btn btn-secondary">
+                💬 고객 게시판
+            </a>
+        </div>
+        <p class="countdown"><span id="timer">10</span>초 후 자동으로 홈으로 이동합니다</p>
+    </main>
+
+    <script>
+        // 파티클 배경
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let W, H, particles = [];
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+        for (let i = 0; i < 60; i++) {
+            particles.push({
+                x: Math.random() * W, y: Math.random() * H,
+                r: Math.random() * 1.5 + 0.3,
+                vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+                a: Math.random() * 0.4 + 0.1
+            });
+        }
+        (function draw() {
+            ctx.clearRect(0, 0, W, H);
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(0,229,255,${p.a})`;
+                ctx.fill();
+                p.x += p.vx; p.y += p.vy;
+                if (p.x < 0 || p.x > W) p.vx *= -1;
+                if (p.y < 0 || p.y > H) p.vy *= -1;
+            });
+            requestAnimationFrame(draw);
+        })();
+
+        // 자동 리다이렉트 카운트다운
+        let t = 10;
+        const timerEl = document.getElementById('timer');
+        const iv = setInterval(() => {
+            t--;
+            timerEl.textContent = t;
+            if (t <= 0) { clearInterval(iv); location.href = 'index.html'; }
+        }, 1000);
+    </script>
+</body>
+</html>

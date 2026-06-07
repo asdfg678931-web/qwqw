@@ -1,0 +1,20 @@
+{
+  "name": "Nextep Dynamics",
+  "short_name": "Nextep",
+  "description": "미래 로봇랩의 혁신적인 기술력을 바탕으로 설립된 첨단 로보틱스 스타트업",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05050a",
+  "theme_color": "#00e5ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "technology"],
+  "lang": "ko"
+}

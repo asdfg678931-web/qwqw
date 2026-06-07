@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사업 분야 | Nextep Dynamics</title>
+    <meta name="description" content="Nextep Dynamics의 6대 사업 전략: 각 제품이 공략하는 시장, 비즈니스 모델, 고객 세그먼트, 수익 구조와 성장 로드맵을 소개합니다.">
+    <meta name="theme-color" content="#00e5ff">
+    <meta name="color-scheme" content="dark">
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="사업 분야 | Nextep Dynamics">
+    <meta property="og:description" content="6대 사업 전략 — 재난구조·서빙·스마트팩토리·방산·농업·SDK 시장 공략">
+    <meta property="og:url"         content="https://nextep-dynamics.kr/business.html">
+    <meta property="og:image"       content="https://nextep-dynamics.kr/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="사업 분야 | Nextep Dynamics">
+    <meta name="twitter:description" content="6대 사업 전략 — 재난구조·서빙·스마트팩토리·방산·농업·SDK 시장 공략">
+    <meta name="twitter:image"       content="https://nextep-dynamics.kr/og-image.png">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://nextep-dynamics.kr/business.html">
+    <!-- Preconnect (fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="business.css?v=3">
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">본문 바로가기</a>
+
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="메인 네비게이션">
+        <div class="nav-container" style="max-width: 1200px; margin: 0 auto;">
+            <a href="index.html" class="logo" aria-label="홈으로 이동">NEXTEP<span>DYNAMICS</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html"      class="nav-item">회사소개</a></li>
+                <li><a href="index.html#products" class="nav-item">제품소개</a></li>
+                <li><a href="business.html"   class="nav-item active">사업분야</a></li>
+                <li><a href="careers.html" class="nav-item">인재채용</a></li>
+                <li><a href="board.html"      class="nav-item">고객게시판</a></li>
+            </ul>
+            <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false" tabindex="0">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- ═══════════════════════════════════════
+             HERO
+        ═══════════════════════════════════════ -->
+        <section class="biz-hero" aria-label="사업 분야 소개 헤더">
+            <canvas id="biz-canvas" aria-hidden="true"></canvas>
+            <div class="biz-hero-grid" aria-hidden="true"></div>
+
+            <div class="biz-hero-inner" style="max-width: 1200px; margin: 0 auto;">
+                <div class="biz-hero-eyebrow fade-in-up">
+                    <span class="badge">Business Strategy</span>
+                    <span class="biz-domain-pill">6 Market Sectors</span>
+                </div>
+
+                <h1 class="fade-in-up delay-1">
+                    제품을 넘어<br>
+                    <span class="gradient-text">시장을 바꾸는 전략</span>
+                </h1>
+
+                <p class="biz-hero-desc fade-in-up delay-2">
+                    Nextep Dynamics의 각 제품은 명확한 시장 기회를 겨냥합니다.<br>
+                    <strong>누구에게 팔고, 어떻게 돈을 벌고, 언제 성장하는가</strong> — 6개 사업 전략을 공개합니다.
+                </p>
+
+                <!-- 핵심 지표 -->
+                <div class="biz-kpi-row fade-in-up delay-3" aria-label="핵심 사업 지표">
+                    <div class="biz-kpi" tabindex="0">
+                        <span class="biz-kpi-num" id="kpi-market">0</span>
+                        <span class="biz-kpi-unit">조 원+</span>
+                        <span class="biz-kpi-label">합산 목표 시장</span>
+                    </div>
+                    <div class="biz-kpi-sep" aria-hidden="true"></div>
+                    <div class="biz-kpi" tabindex="0">
+                        <span class="biz-kpi-num" id="kpi-model">3</span>
+                        <span class="biz-kpi-unit">가지</span>
+                        <span class="biz-kpi-label">수익 모델 유형</span>
+                    </div>
+                    <div class="biz-kpi-sep" aria-hidden="true"></div>
+                    <div class="biz-kpi" tabindex="0">
+                        <span class="biz-kpi-num" id="kpi-target">2030</span>
+                        <span class="biz-kpi-unit">년</span>
+                        <span class="biz-kpi-label">1차 목표 연도</span>
+                    </div>
+                    <div class="biz-kpi-sep" aria-hidden="true"></div>
+                    <div class="biz-kpi" tabindex="0">
+                        <span class="biz-kpi-num" id="kpi-seg">6</span>
+                        <span class="biz-kpi-unit">개</span>
+                        <span class="biz-kpi-label">고객 세그먼트</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 스크롤 유도 -->
+            <a href="#biz-s1" class="biz-scroll-cue" aria-label="아래로 스크롤" tabindex="0">
+                <div class="biz-scroll-mouse"><div class="biz-scroll-dot"></div></div>
+                <span>SCROLL</span>
+            </a>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             도메인 퀵 네비게이션
+        ═══════════════════════════════════════ -->
+        <section class="biz-overview" aria-labelledby="overview-title">
+            <div class="biz-overview-inner" style="max-width: 1200px; margin: 0 auto;">
+                <div class="section-title">
+                    <h2 id="overview-title">6대 사업 전략 한눈에 보기</h2>
+                    <p>제품소개에서 본 로봇들이 어떤 시장에서, 어떻게 수익을 만드는지 확인하세요</p>
+                </div>
+
+                <div class="biz-domain-nav fade-in" role="list" aria-label="6대 사업 전략 바로가기">
+                    <a href="#biz-s1" class="biz-dnav-item" role="listitem" tabindex="0" id="dnav-1">
+                        <span class="biz-dnav-icon" aria-hidden="true">🏛️</span>
+                        <span>공공·재난<br>B2G 전략</span>
+                    </a>
+                    <a href="#biz-s2" class="biz-dnav-item" role="listitem" tabindex="0" id="dnav-2">
+                        <span class="biz-dnav-icon" aria-hidden="true">🍽️</span>
+                        <span>외식업<br>B2B 구독</span>
+                    </a>
+                    <a href="#biz-s3" class="biz-dnav-item" role="listitem" tabindex="0" id="dnav-3">
+                        <span class="biz-dnav-icon" aria-hidden="true">🏭</span>
+                        <span>제조업<br>스마트화</span>
+                    </a>
+                    <a href="#biz-s4" class="biz-dnav-item" role="listitem" tabindex="0" id="dnav-4">
+                        <span class="biz-dnav-icon" aria-hidden="true">🛍️</span>
+                        <span>소비자<br>B2C 플랫폼</span>
+                    </a>
+                    <a href="#biz-s5" class="biz-dnav-item" role="listitem" tabindex="0" id="dnav-5">
+                        <span class="biz-dnav-icon" aria-hidden="true">🛡️</span>
+                        <span>국방·보안<br>B2G 방산</span>
+                    </a>
+                    <a href="#biz-s6" class="biz-dnav-item" role="listitem" tabindex="0" id="dnav-6">
+                        <span class="biz-dnav-icon" aria-hidden="true">💻</span>
+                        <span>SDK·플랫폼<br>B2D 라이선스</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             SECTOR 1 — 재난구조 B2G 전략
+        ═══════════════════════════════════════ -->
+        <section id="biz-s1" class="biz-domain" aria-labelledby="s1-title">
+            <div class="biz-domain-inner" style="max-width: 1200px; margin: 0 auto;">
+                <!-- 좌: 전략 카드 -->
+                <div class="biz-visual slide-in-left">
+                    <div class="biz-visual-card" tabindex="0">
+                        <div class="biz-visual-badge rescue">B2G</div>
+                        <div class="biz-strategy-header rescue-bg-soft">
+                            <span class="biz-strategy-icon">🦾</span>
+                            <div>
+                                <div class="biz-strategy-product">이족보행 로봇 + 사족보행 + 드론</div>
+                                <div class="biz-strategy-market">공공안전 / 소방청 / 재난관리청</div>
+                            </div>
+                        </div>
+
+                        <!-- 수익 구조 -->
+                        <div class="biz-revenue-model" aria-label="수익 모델">
+                            <div class="brm-title">💰 수익 구조</div>
+                            <div class="brm-item">
+                                <span class="brm-type rescue-chip">정부 조달</span>
+                                <span class="brm-desc">소방청·구조대 대당 납품 계약</span>
+                            </div>
+                            <div class="brm-item">
+                                <span class="brm-type rescue-chip">유지보수</span>
+                                <span class="brm-desc">연간 MRO 계약 (Annual Fee)</span>
+                            </div>
+                            <div class="brm-item">
+                                <span class="brm-type rescue-chip">교육훈련</span>
+                                <span class="brm-desc">구조대원 운용 교육 프로그램</span>
+                            </div>
+                        </div>
+
+                        <!-- 시장 규모 -->
+                        <div class="biz-market-bar" aria-label="시장 규모">
+                            <span class="biz-market-label">글로벌 재난구조 로봇 시장 (2030년)</span>
+                            <div class="biz-bar-wrap" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                                <div class="biz-bar-fill rescue-fill" data-w="78"></div>
+                            </div>
+                            <span class="biz-market-val">약 8.4조 원</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 우: 전략 설명 -->
+                <div class="biz-text slide-in-right">
+                    <div class="biz-domain-num" aria-hidden="true">01</div>
+                    <span class="biz-sector-tag rescue-tag">공공·재난 안전 시장</span>
+                    <h2 id="s1-title">정부가 사는 로봇,<br>우리가 만드는 계약</h2>
+                    <p class="biz-lead">재난구조용 이족보행 로봇과 사족보행·드론 복합 시스템은 민간 시장이 아닌 <strong>정부 조달 시장</strong>을 정조준합니다. 한 번의 계약이 수십억 원 규모의 장기 매출로 이어지는 B2G 구조입니다.</p>
+                    <p class="biz-body">한국 소방청은 매년 특수 구조 장비 예산을 확대하고 있으며, 2025년 기준 드론·로봇 관련 예산은 전년 대비 38% 증가했습니다. Nextep Dynamics는 <strong>미래 로봇랩의 기술력을 배경으로</strong> 기술 신뢰도를 선제 확보하고, 2027년 소방청 파일럿 납품 → 2029년 전국 구조대 확산이라는 단계적 B2G 진입 전략을 추진합니다.</p>
+
+                    <div class="biz-roadmap" role="list" aria-label="사업 로드맵">
+                        <div class="brmap-item" role="listitem" tabindex="0">
+                            <div class="brmap-year rescue-year">2026</div>
+                            <div class="brmap-content">
+                                <strong>방산·공공 전시회 출품</strong>
+                                <p>소방방재청 관계자 대상 PoC 시연, 언론 노출 확보</p>
+                            </div>
+                        </div>
+                        <div class="brmap-item" role="listitem" tabindex="0">
+                            <div class="brmap-year rescue-year">2027</div>
+                            <div class="brmap-content">
+                                <strong>소방청 파일럿 계약 체결</strong>
+                                <p>3개 소방서 시범 도입, 실전 피드백 반영 고도화</p>
+                            </div>
+                        </div>
+                        <div class="brmap-item" role="listitem" tabindex="0">
+                            <div class="brmap-year rescue-year">2030</div>
+                            <div class="brmap-content">
+                                <strong>전국 구조대 표준 장비화</strong>
+                                <p>MOU → 정식 조달 등록, 연간 유지보수 계약 확보</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biz-tags">
+                        <span class="tag">정부조달</span>
+                        <span class="tag">소방청 파트너십</span>
+                        <span class="tag">MRO 장기계약</span>
+                        <span class="tag">공공안전 예산</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             SECTOR 2 — 서빙 로봇 B2B 구독
+        ═══════════════════════════════════════ -->
+        <section id="biz-s2" class="biz-domain biz-domain-alt" aria-labelledby="s2-title">
+            <div class="biz-domain-inner biz-domain-inner-rev" style="max-width: 1200px; margin: 0 auto;">
+                <div class="biz-visual slide-in-right">
+                    <div class="biz-visual-card" tabindex="0">
+                        <div class="biz-visual-badge service">B2B</div>
+                        <div class="biz-strategy-header service-bg-soft">
+                            <span class="biz-strategy-icon">🍽️</span>
+                            <div>
+                                <div class="biz-strategy-product">F&B 서빙 로봇 + 관제 대시보드</div>
+                                <div class="biz-strategy-market">외식업체 / 프랜차이즈 / 호텔</div>
+                            </div>
+                        </div>
+
+                        <!-- 구독 모델 시뮬레이터 -->
+                        <div class="biz-sub-simulator" aria-label="구독 수익 시뮬레이터">
+                            <div class="biz-sub-header">
+                                <span class="biz-dash-dot service-dot"></span>
+                                <span>월 구독 수익 시뮬레이터</span>
+                            </div>
+                            <div class="biz-sub-body">
+                                <div class="biz-sub-row">
+                                    <span>도입 매장 수</span>
+                                    <input type="range" id="sub-stores" min="1" max="100" value="10" aria-label="도입 매장 수 슬라이더">
+                                    <span class="biz-sub-val" id="sub-stores-val">10개</span>
+                                </div>
+                                <div class="biz-sub-row biz-sub-result">
+                                    <span>예상 월 구독료</span>
+                                    <span class="service-text biz-sub-money" id="sub-revenue">150만 원</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="biz-market-bar">
+                            <span class="biz-market-label">글로벌 서비스 로봇 시장 (2030년)</span>
+                            <div class="biz-bar-wrap" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+                                <div class="biz-bar-fill service-fill" data-w="92"></div>
+                            </div>
+                            <span class="biz-market-val">약 37조 원</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="biz-text slide-in-left">
+                    <div class="biz-domain-num" aria-hidden="true">02</div>
+                    <span class="biz-sector-tag service-tag">외식업 자동화 시장</span>
+                    <h2 id="s2-title">팔지 않고 빌려줍니다,<br>매달 들어오는 구독 매출</h2>
+                    <p class="biz-lead">F&B 서빙 로봇의 핵심 수익 전략은 <strong>구독형(RaaS, Robot-as-a-Service)</strong>입니다. 초기 구매 부담 없이 월정액으로 로봇을 도입할 수 있어 중소 외식업체까지 고객층을 넓힙니다.</p>
+                    <p class="biz-body">국내 외식업체 수는 약 73만 개. 이 중 서빙 인력난을 겪는 매장이 전체의 60%에 달합니다. 최저임금 인상 추세와 맞물려 월 15만 원 수준의 로봇 구독료는 파트타임 직원 1인 고용 비용(월 80~120만 원)의 1/6 수준으로, <strong>도입 결정에 1분도 걸리지 않는 가격 경쟁력</strong>을 갖춥니다. Firebase 기반 관제 대시보드는 SaaS 방식으로 별도 과금하여 소프트웨어 수익까지 이중 확보합니다.</p>
+
+                    <div class="biz-features" role="list">
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon service-icon" aria-hidden="true">📋</div>
+                            <div>
+                                <strong>RaaS 구독 모델</strong>
+                                <p>월 15만 원~(로봇) + 5만 원~(관제 SaaS) = 낮은 진입 장벽</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon service-icon" aria-hidden="true">🏪</div>
+                            <div>
+                                <strong>프랜차이즈 대량 공급</strong>
+                                <p>본사 계약 1건 → 전국 가맹점 일괄 도입, 규모의 경제 실현</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon service-icon" aria-hidden="true">📊</div>
+                            <div>
+                                <strong>운영 데이터 → 2차 수익</strong>
+                                <p>배송 패턴·피크타임 분석 데이터를 외식업 컨설팅 상품으로 판매</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon service-icon" aria-hidden="true">🎯</div>
+                            <div>
+                                <strong>현장 출신 창업 강점</strong>
+                                <p>아웃백 직접 근무 경험 → 매장 오너 신뢰 확보, 영업 전환율 UP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biz-tags">
+                        <span class="tag">RaaS 구독</span>
+                        <span class="tag">프랜차이즈 B2B</span>
+                        <span class="tag">SaaS 관제</span>
+                        <span class="tag">인력 대체 ROI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             SECTOR 3 — 스마트팩토리 솔루션 영업
+        ═══════════════════════════════════════ -->
+        <section id="biz-s3" class="biz-domain" aria-labelledby="s3-title">
+            <div class="biz-domain-inner" style="max-width: 1200px; margin: 0 auto;">
+                <div class="biz-visual slide-in-left">
+                    <div class="biz-visual-card" tabindex="0">
+                        <div class="biz-visual-badge factory">B2B</div>
+                        <div class="biz-strategy-header factory-bg-soft">
+                            <span class="biz-strategy-icon">🏭</span>
+                            <div>
+                                <div class="biz-strategy-product">AI 비전 검사 + 협동 로봇 패키징</div>
+                                <div class="biz-strategy-market">중소 제조업체 / 대기업 협력사</div>
+                            </div>
+                        </div>
+
+                        <!-- ROI 계산기 -->
+                        <div class="biz-roi-calc" aria-label="투자 회수 기간 계산기">
+                            <div class="biz-roi-header">
+                                <span class="biz-dash-dot factory-dot"></span>
+                                <span>불량률 개선 ROI 계산기</span>
+                            </div>
+                            <div class="biz-roi-body">
+                                <div class="biz-roi-row">
+                                    <span>현재 불량률</span>
+                                    <input type="range" id="defect-rate" min="1" max="10" value="5" aria-label="현재 불량률 슬라이더">
+                                    <span class="biz-roi-val" id="defect-rate-val">5%</span>
+                                </div>
+                                <div class="biz-roi-row biz-roi-result">
+                                    <span>월 손실 절감액</span>
+                                    <span class="factory-text biz-roi-money" id="roi-saving">약 2,500만 원</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="biz-market-bar">
+                            <span class="biz-market-label">스마트팩토리 AI 비전 시장 (2028년)</span>
+                            <div class="biz-bar-wrap" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+                                <div class="biz-bar-fill factory-fill" data-w="68"></div>
+                            </div>
+                            <span class="biz-market-val">약 19조 원</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="biz-text slide-in-right">
+                    <div class="biz-domain-num" aria-hidden="true">03</div>
+                    <span class="biz-sector-tag factory-tag">제조업 스마트화 시장</span>
+                    <h2 id="s3-title">불량 하나가 수천만 원,<br>우리가 그 손실을 막습니다</h2>
+                    <p class="biz-lead">AI 비전 검사 시스템과 협동 로봇 패키징은 <strong>중소 제조업체의 수율 개선</strong>을 직접 수치로 증명합니다. ROI가 명확한 솔루션은 영업 사이클이 짧고, 재계약률이 높습니다.</p>
+                    <p class="biz-body">국내 중소 제조업체 중 자동화율이 30% 미만인 곳이 전체의 68%입니다. 이들 기업의 평균 불량률은 4~8%로, 월 수천만 원의 손실을 감수하고 있습니다. Nextep Dynamics의 솔루션을 도입하면 불량률을 0.6% 이하로 낮출 수 있어, <strong>도입 6개월 내 투자 회수</strong>가 가능합니다. 초기 설치비 + 연간 유지보수 계약 구조로 안정적인 B2B 매출을 확보합니다.</p>
+
+                    <div class="biz-features" role="list">
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon factory-icon" aria-hidden="true">💡</div>
+                            <div>
+                                <strong>명확한 ROI = 짧은 영업 사이클</strong>
+                                <p>불량률 개선 수치를 데이터로 제시 → 의사결정 기간 단축</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon factory-icon" aria-hidden="true">🔗</div>
+                            <div>
+                                <strong>스마트팩토리 정부 지원금 연계</strong>
+                                <p>중기부 스마트공장 보급사업 연계 → 기업 부담 최대 50% 절감</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon factory-icon" aria-hidden="true">📈</div>
+                            <div>
+                                <strong>대기업 2차 밴더 진입 전략</strong>
+                                <p>협력사 납품 → 대기업 품질 기준 충족 인증 → 직납 계약 상향</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon factory-icon" aria-hidden="true">🌏</div>
+                            <div>
+                                <strong>동남아 제조업 수출 확장</strong>
+                                <p>베트남·인도네시아 급성장 제조업 시장 → OEM 솔루션 수출</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biz-roadmap" role="list" aria-label="스마트팩토리 로드맵">
+                        <div class="brmap-item" role="listitem" tabindex="0">
+                            <div class="brmap-year factory-year">2026</div>
+                            <div class="brmap-content">
+                                <strong>중기부 스마트공장 공급기업 등록</strong>
+                                <p>정부 지원 연계 영업 채널 확보, 레퍼런스 3건 구축</p>
+                            </div>
+                        </div>
+                        <div class="brmap-item" role="listitem" tabindex="0">
+                            <div class="brmap-year factory-year">2028</div>
+                            <div class="brmap-content">
+                                <strong>동남아 제조업체 수출 개시</strong>
+                                <p>베트남·인도네시아 현지 대리점 계약, 솔루션 현지화</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biz-tags">
+                        <span class="tag">스마트공장 지원금</span>
+                        <span class="tag">수율 개선 ROI</span>
+                        <span class="tag">대기업 밴더</span>
+                        <span class="tag">동남아 수출</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             SECTOR 4 — 소비자 AI 로봇 B2C 플랫폼
+        ═══════════════════════════════════════ -->
+        <section id="biz-s4" class="biz-domain biz-domain-alt" aria-labelledby="s4-title">
+            <div class="biz-domain-inner biz-domain-inner-rev" style="max-width: 1200px; margin: 0 auto;">
+                <div class="biz-visual slide-in-right">
+                    <div class="biz-visual-card" tabindex="0">
+                        <div class="biz-visual-badge consumer">B2C</div>
+                        <div class="biz-strategy-header consumer-bg-soft">
+                            <span class="biz-strategy-icon">🤖</span>
+                            <div>
+                                <div class="biz-strategy-product">데스크탑 AI 반려 로봇</div>
+                                <div class="biz-strategy-market">MZ세대 / 교육 기관 / 코딩 학원</div>
+                            </div>
+                        </div>
+
+                        <!-- 수익 구조 피라미드 -->
+                        <div class="biz-funnel" aria-label="수익 퍼널 구조">
+                            <div class="biz-funnel-title">📐 수익 퍼널 구조</div>
+                            <div class="biz-funnel-step f-wide">
+                                <span>오픈소스 무료 배포</span>
+                                <span class="consumer-text">커뮤니티 확보</span>
+                            </div>
+                            <div class="biz-funnel-step f-mid">
+                                <span>하드웨어 키트 판매</span>
+                                <span class="consumer-text">1대당 12만 원</span>
+                            </div>
+                            <div class="biz-funnel-step f-narrow">
+                                <span>교육 콘텐츠 구독</span>
+                                <span class="consumer-text">월 9,900원</span>
+                            </div>
+                        </div>
+
+                        <div class="biz-market-bar">
+                            <span class="biz-market-label">소비자 로봇 시장 B2C (2030년)</span>
+                            <div class="biz-bar-wrap" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                                <div class="biz-bar-fill consumer-fill" data-w="55"></div>
+                            </div>
+                            <span class="biz-market-val">약 11조 원</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="biz-text slide-in-left">
+                    <div class="biz-domain-num" aria-hidden="true">04</div>
+                    <span class="biz-sector-tag consumer-tag">소비자 & 교육 시장</span>
+                    <h2 id="s4-title">공짜로 퍼뜨리고,<br>커뮤니티로 돈 법니다</h2>
+                    <p class="biz-lead">데스크탑 AI 반려 로봇의 소프트웨어를 <strong>오픈소스로 전면 무료 공개</strong>합니다. 커뮤니티가 커질수록 하드웨어 키트와 교육 구독 매출이 따라옵니다 — 이것이 B2C 플랫폼 전략입니다.</p>
+                    <p class="biz-body">아두이노 + Python 기반의 친숙한 스택을 활용해 코딩 입문자도 3시간 내에 첫 커스텀을 완성할 수 있습니다. 국내 코딩 교육 시장 규모는 2024년 기준 1.2조 원으로, 학원·학교 단위의 <strong>키트 대량 구매 채널</strong>이 핵심 B2B2C 수익원입니다. 'Hello, Robot' 커뮤니티에서 유저 제작 페르소나를 유료 마켓플레이스로 판매하는 앱스토어 모델도 병행합니다.</p>
+
+                    <div class="biz-features" role="list">
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon consumer-icon" aria-hidden="true">🎁</div>
+                            <div>
+                                <strong>오픈소스 → 바이럴 마케팅</strong>
+                                <p>GitHub 스타 확보 → SNS 바이럴 → 미디어 노출 무비용 달성</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon consumer-icon" aria-hidden="true">🏫</div>
+                            <div>
+                                <strong>학교·학원 B2B2C 채널</strong>
+                                <p>교육부 SW교육 의무화 → 코딩 키트 학교 납품 대량 계약</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon consumer-icon" aria-hidden="true">🛒</div>
+                            <div>
+                                <strong>마켓플레이스 수수료 수익</strong>
+                                <p>유저 제작 페르소나·LED 패턴 판매, 플랫폼 30% 수수료</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon consumer-icon" aria-hidden="true">🌐</div>
+                            <div>
+                                <strong>글로벌 메이커 커뮤니티</strong>
+                                <p>Maker Faire·CES 출품으로 해외 리셀러·에듀테크 파트너 확보</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biz-tags">
+                        <span class="tag">오픈소스 바이럴</span>
+                        <span class="tag">교육 키트 납품</span>
+                        <span class="tag">구독 콘텐츠</span>
+                        <span class="tag">앱스토어 모델</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             SECTOR 5 — 국방·보안 방산 전략
+        ═══════════════════════════════════════ -->
+        <section id="biz-s5" class="biz-domain" aria-labelledby="s5-title">
+            <div class="biz-domain-inner" style="max-width: 1200px; margin: 0 auto;">
+                <div class="biz-visual slide-in-left">
+                    <div class="biz-visual-card" tabindex="0">
+                        <div class="biz-visual-badge defense">B2G</div>
+                        <div class="biz-strategy-header defense-bg-soft">
+                            <span class="biz-strategy-icon">🛡️</span>
+                            <div>
+                                <div class="biz-strategy-product">사족보행 + 드론 복합 정찰 플랫폼</div>
+                                <div class="biz-strategy-market">국방부 / 방위사업청 / 경찰청</div>
+                            </div>
+                        </div>
+
+                        <!-- 방산 진입 단계 -->
+                        <div class="biz-defense-stages" aria-label="방산 시장 진입 단계">
+                            <div class="biz-ds-title">🎖️ 방산 시장 진입 단계</div>
+                            <div class="biz-ds-step active-stage">
+                                <span class="biz-ds-num defense-chip">1단계</span>
+                                <span>전시회 출품 · 연구기관 협력</span>
+                            </div>
+                            <div class="biz-ds-step">
+                                <span class="biz-ds-num">2단계</span>
+                                <span>경찰청 · 보안업체 시범 도입</span>
+                            </div>
+                            <div class="biz-ds-step">
+                                <span class="biz-ds-num">3단계</span>
+                                <span>방위사업청 연구개발 과제 수주</span>
+                            </div>
+                        </div>
+
+                        <div class="biz-market-bar">
+                            <span class="biz-market-label">국방·보안 로봇 시장 (2030년)</span>
+                            <div class="biz-bar-wrap" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                                <div class="biz-bar-fill defense-fill" data-w="72"></div>
+                            </div>
+                            <span class="biz-market-val">약 24조 원</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="biz-text slide-in-right">
+                    <div class="biz-domain-num" aria-hidden="true">05</div>
+                    <span class="biz-sector-tag defense-tag">국방·보안 방산 시장</span>
+                    <h2 id="s5-title">방산 시장은 느리지만,<br>한 번 들어가면 10년입니다</h2>
+                    <p class="biz-lead">사족보행 + 드론 복합 정찰 시스템은 <strong>방위사업청 연구과제 수주</strong>와 <strong>경찰청 보안 도입</strong>이라는 투 트랙 전략으로 방산 시장에 진입합니다. 진입 장벽이 높은 만큼, 한번 납품되면 교체 주기가 10년입니다.</p>
+                    <p class="biz-body">한국 국방 예산의 무인체계 분야는 2025년 1조 2천억 원을 돌파하며 매년 15% 이상 성장하고 있습니다. Nextep Dynamics는 대형 방산 기업과 직접 경쟁하는 대신, <strong>틈새 특수임무 플랫폼</strong>으로 포지셔닝합니다. 경찰청 무인 순찰·보안 시장을 선행 공략하여 실전 레퍼런스를 쌓은 후, 방위사업청 연구과제 공모에 참가하는 단계적 전략을 취합니다.</p>
+
+                    <div class="biz-features" role="list">
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon defense-icon" aria-hidden="true">🏆</div>
+                            <div>
+                                <strong>틈새 특수임무 포지셔닝</strong>
+                                <p>대기업 방산과 정면 경쟁 회피 → 드론 격납 특수 플랫폼 독점</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon defense-icon" aria-hidden="true">👮</div>
+                            <div>
+                                <strong>경찰청 무인순찰 선행 진입</strong>
+                                <p>국가중요시설 순찰 → 실전 레퍼런스 확보 → 군 납품 신뢰도 구축</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon defense-icon" aria-hidden="true">🔬</div>
+                            <div>
+                                <strong>방위사업청 R&D 과제 수주</strong>
+                                <p>연구 개발비 정부 지원 → 기술 개발 비용 절감 + 납품 우선권</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon defense-icon" aria-hidden="true">🌍</div>
+                            <div>
+                                <strong>NATO 동맹국 방산 수출</strong>
+                                <p>K-방산 열풍 → 폴란드·루마니아 등 동유럽 수출 타진</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biz-tags">
+                        <span class="tag">방위사업청 과제</span>
+                        <span class="tag">경찰청 무인순찰</span>
+                        <span class="tag">틈새 방산 포지셔닝</span>
+                        <span class="tag">K-방산 수출</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             SECTOR 6 — SDK 플랫폼 B2D 라이선스
+        ═══════════════════════════════════════ -->
+        <section id="biz-s6" class="biz-domain biz-domain-alt" aria-labelledby="s6-title">
+            <div class="biz-domain-inner biz-domain-inner-rev" style="max-width: 1200px; margin: 0 auto;">
+                <div class="biz-visual slide-in-right">
+                    <div class="biz-visual-card" tabindex="0">
+                        <div class="biz-visual-badge platform">B2D</div>
+                        <div class="biz-strategy-header platform-bg-soft">
+                            <span class="biz-strategy-icon">💻</span>
+                            <div>
+                                <div class="biz-strategy-product">Nextep SDK + 로봇 미들웨어</div>
+                                <div class="biz-strategy-market">로봇 스타트업 / 연구기관 / 대학교</div>
+                            </div>
+                        </div>
+
+                        <!-- 라이선스 티어 -->
+                        <div class="biz-license-tiers" aria-label="라이선스 가격 티어">
+                            <div class="biz-lt-title">📦 라이선스 티어</div>
+                            <div class="biz-lt-row">
+                                <span class="biz-lt-tier">Academic</span>
+                                <span class="platform-text biz-lt-price">무료</span>
+                                <span class="biz-lt-desc">대학·연구기관</span>
+                            </div>
+                            <div class="biz-lt-row biz-lt-highlight">
+                                <span class="biz-lt-tier">Startup</span>
+                                <span class="platform-text biz-lt-price">월 29만 원</span>
+                                <span class="biz-lt-desc">소규모 팀</span>
+                            </div>
+                            <div class="biz-lt-row">
+                                <span class="biz-lt-tier">Enterprise</span>
+                                <span class="platform-text biz-lt-price">맞춤 협의</span>
+                                <span class="biz-lt-desc">대기업·SI사</span>
+                            </div>
+                        </div>
+
+                        <div class="biz-market-bar">
+                            <span class="biz-market-label">로봇 미들웨어·SDK 시장 (2028년)</span>
+                            <div class="biz-bar-wrap" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100">
+                                <div class="biz-bar-fill platform-fill" data-w="48"></div>
+                            </div>
+                            <span class="biz-market-val">약 6.2조 원</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="biz-text slide-in-left">
+                    <div class="biz-domain-num" aria-hidden="true">06</div>
+                    <span class="biz-sector-tag platform-tag">SDK & 플랫폼 시장</span>
+                    <h2 id="s6-title">우리 기술을 팔지 않고,<br>우리 플랫폼에 가두는 전략</h2>
+                    <p class="biz-lead">Nextep SDK는 우리 로봇에 탑재되는 소프트웨어이자, <strong>외부 개발자에게 라이선스로 판매</strong>되는 독립 수익원입니다. 대학 무료 배포로 미래 고객층을 먼저 잠급니다.</p>
+                    <p class="biz-body">ROS2 생태계 내에서 하드웨어 추상화·AI 추론·클라우드 연동을 단일 SDK로 해결해주는 솔루션은 전 세계적으로 손에 꼽힙니다. <strong>미래 로봇랩 협력으로</strong> 로봇랩 인턴십 때부터 Nextep SDK를 배운 개발자들이 취업 후에도 자연스럽게 유료 라이선스로 전환하는 깔때기 구조를 설계합니다. 로봇 스타트업 붐을 타고 API 과금, 클라우드 연산 과금 등 소프트웨어 마진 구조를 구축합니다.</p>
+
+                    <div class="biz-features" role="list">
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon platform-icon" aria-hidden="true">🎓</div>
+                            <div>
+                                <strong>대학 무료 → 기업 유료 전환 깔때기</strong>
+                                <p>학생 때 익숙해진 SDK → 취직 후 회사에 도입 제안 → 자연 확산</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon platform-icon" aria-hidden="true">💰</div>
+                            <div>
+                                <strong>SaaS형 API 종량제 과금</strong>
+                                <p>AI 추론 호출 건수·클라우드 연산량 기반 과금 → 높은 마진</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon platform-icon" aria-hidden="true">🤝</div>
+                            <div>
+                                <strong>SI 기업 채널 파트너십</strong>
+                                <p>대형 SI사의 로봇 프로젝트에 SDK 번들 → 채널 세일즈 확장</p>
+                            </div>
+                        </div>
+                        <div class="biz-feat" role="listitem" tabindex="0">
+                            <div class="biz-feat-icon platform-icon" aria-hidden="true">🌱</div>
+                            <div>
+                                <strong>로봇 스타트업 인큐베이터 연계</strong>
+                                <p>액셀러레이터 협약 → 투자 포트폴리오사 SDK 의무 사용 조건</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biz-roadmap" role="list" aria-label="SDK 플랫폼 로드맵">
+                        <div class="brmap-item" role="listitem" tabindex="0">
+                            <div class="brmap-year platform-year">2026</div>
+                            <div class="brmap-content">
+                                <strong>동양미래대 전학과 무료 배포</strong>
+                                <p>산학협력 계약 → 교과과정 편입, 연간 200명+ 사용자 확보</p>
+                            </div>
+                        </div>
+                        <div class="brmap-item" role="listitem" tabindex="0">
+                            <div class="brmap-year platform-year">2027</div>
+                            <div class="brmap-content">
+                                <strong>스타트업 티어 유료 전환</strong>
+                                <p>GitHub 1,000 스타 달성 → Product Hunt 론칭 → 글로벌 노출</p>
+                            </div>
+                        </div>
+                        <div class="brmap-item" role="listitem" tabindex="0">
+                            <div class="brmap-year platform-year">2029</div>
+                            <div class="brmap-content">
+                                <strong>Enterprise + API 과금 체계 확립</strong>
+                                <p>대기업 3사 이상 계약, 연간 SaaS 매출 50억 원 목표</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="biz-tags">
+                        <span class="tag">B2D 라이선스</span>
+                        <span class="tag">API 종량제</span>
+                        <span class="tag">채널 파트너십</span>
+                        <span class="tag">스타트업 생태계</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             시장 규모 합산 요약
+        ═══════════════════════════════════════ -->
+        <section class="biz-market-section" aria-labelledby="market-title">
+            <div class="biz-market-inner" style="max-width: 1200px; margin: 0 auto;">
+                <div class="section-title">
+                    <h2 id="market-title">우리가 공략하는 시장의 총합</h2>
+                    <p>6개 사업 전략이 각각 겨냥하는 글로벌 시장 규모</p>
+                </div>
+
+                <div class="biz-market-grid fade-in" role="list">
+                    <div class="biz-mcard" role="listitem" tabindex="0">
+                        <span class="biz-mcard-icon" aria-hidden="true">🏛️</span>
+                        <span class="biz-mcard-sector">공공·재난 B2G</span>
+                        <span class="biz-mcard-val rescue-text">8.4조 원</span>
+                        <div class="biz-mcard-bar"><div class="biz-mcard-fill rescue-fill" data-w="23"></div></div>
+                    </div>
+                    <div class="biz-mcard" role="listitem" tabindex="0">
+                        <span class="biz-mcard-icon" aria-hidden="true">🍽️</span>
+                        <span class="biz-mcard-sector">외식업 B2B 구독</span>
+                        <span class="biz-mcard-val service-text">37조 원</span>
+                        <div class="biz-mcard-bar"><div class="biz-mcard-fill service-fill" data-w="100"></div></div>
+                    </div>
+                    <div class="biz-mcard" role="listitem" tabindex="0">
+                        <span class="biz-mcard-icon" aria-hidden="true">🏭</span>
+                        <span class="biz-mcard-sector">제조업 스마트화</span>
+                        <span class="biz-mcard-val factory-text">19조 원</span>
+                        <div class="biz-mcard-bar"><div class="biz-mcard-fill factory-fill" data-w="51"></div></div>
+                    </div>
+                    <div class="biz-mcard" role="listitem" tabindex="0">
+                        <span class="biz-mcard-icon" aria-hidden="true">🛍️</span>
+                        <span class="biz-mcard-sector">소비자 B2C 플랫폼</span>
+                        <span class="biz-mcard-val consumer-text">11조 원</span>
+                        <div class="biz-mcard-bar"><div class="biz-mcard-fill consumer-fill" data-w="30"></div></div>
+                    </div>
+                    <div class="biz-mcard" role="listitem" tabindex="0">
+                        <span class="biz-mcard-icon" aria-hidden="true">🛡️</span>
+                        <span class="biz-mcard-sector">국방·보안 방산</span>
+                        <span class="biz-mcard-val defense-text">24조 원</span>
+                        <div class="biz-mcard-bar"><div class="biz-mcard-fill defense-fill" data-w="65"></div></div>
+                    </div>
+                    <div class="biz-mcard" role="listitem" tabindex="0">
+                        <span class="biz-mcard-icon" aria-hidden="true">💻</span>
+                        <span class="biz-mcard-sector">SDK 플랫폼 B2D</span>
+                        <span class="biz-mcard-val platform-text">6.2조 원</span>
+                        <div class="biz-mcard-bar"><div class="biz-mcard-fill platform-fill" data-w="17"></div></div>
+                    </div>
+                </div>
+
+                <div class="biz-total fade-in" tabindex="0" aria-label="합산 시장 규모">
+                    <span class="biz-total-label">6개 사업 전략 합산 목표 시장</span>
+                    <span class="biz-total-num">약 <strong id="total-market">105.6</strong>조 원</span>
+                    <span class="biz-total-sub">글로벌 예측 시장 규모 (2028~2030년 기준)</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             CTA
+        ═══════════════════════════════════════ -->
+        <section class="biz-cta fade-in" aria-labelledby="biz-cta-title">
+            <h2 id="biz-cta-title">이 전략에 함께할 파트너를 찾습니다</h2>
+            <p>투자·기술협력·공동 연구·납품 채널 — 어떤 형태든 환영합니다.<br>우리의 제품이 궁금하다면 먼저 제품소개를 확인해보세요.</p>
+            <div class="biz-cta-btns">
+                <a href="board.html" class="btn btn-primary" id="btn-biz-contact">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    파트너십 문의
+                </a>
+                <a href="index.html#products" class="btn btn-secondary" id="btn-biz-products">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    제품 라인업 보기
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-logo">NEXTEP<span>DYNAMICS</span></div>
+            <p>Powered by Future Robot Lab</p>
+            <p class="copyright">© 2026 Nextep Dynamics. All rights reserved.</p>
+            <div class="footer-disclaimer" role="note" aria-label="포트폴리오 안내">
+                <span class="footer-disclaimer-icon">⚠️</span>
+                <p><strong>포트폴리오 안내:</strong> 본 웹사이트는 웹 개발 포트폴리오 용도로 제작되었으며, 기재된 기업·기술·기관(미래 로봇랩 포함) 관련 내용은 모두 <strong>가상의 설정</strong>입니다.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="business.js"></script>
+</body>
+</html>

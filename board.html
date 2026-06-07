@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 게시판 | Nextep Dynamics</title>
+    <meta name="description" content="Nextep Dynamics 고객 및 기술 지원 커뮤니티 게시판입니다. 제품 문의, 미래 로봇랩 협력 문의를 남겨주세요.">
+    <meta name="theme-color" content="#00e5ff">
+    <meta name="color-scheme" content="dark">
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="커뮤니티 게시판 | Nextep Dynamics">
+    <meta property="og:description" content="Nextep Dynamics 고객 및 기술 지원 커뮤니티 게시판">
+    <meta property="og:url"         content="https://nextep-dynamics.kr/board.html">
+    <meta property="og:image"       content="https://nextep-dynamics.kr/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="커뮤니티 게시판 | Nextep Dynamics">
+    <meta name="twitter:description" content="Nextep Dynamics 고객 및 기술 지원 커뮤니티 게시판">
+    <meta name="twitter:image"       content="https://nextep-dynamics.kr/og-image.png">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://nextep-dynamics.kr/board.html">
+    <!-- Preconnect (fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* 커뮤니티 전용 페이지 추가 스타일 */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+            padding-top: 100px; /* 네비게이션 공간 확보 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 접근성을 위한 본문 건너뛰기 링크 -->
+    <a href="#main-content" class="skip-link">본문 바로가기</a>
+
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="메인 네비게이션">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="홈으로 이동">NEXTEP<span>DYNAMICS</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html" class="nav-item">회사소개</a></li>
+                <li><a href="index.html#products" class="nav-item">제품소개</a></li>
+                <li><a href="business.html" class="nav-item">사업분야</a></li>
+                <li><a href="careers.html" class="nav-item">인재채용</a></li>
+                <li><a href="board.html" class="nav-item active">고객게시판</a></li>
+            </ul>
+            <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Board / Community Section -->
+        <section id="board" class="community" aria-labelledby="board-title">
+            <div class="section-title">
+                <h2 id="board-title">소식 및 커뮤니티</h2>
+                <p>제품 관련 문의나 기술 피드백을 자유롭게 남겨주세요.</p>
+            </div>
+            <div class="community-container">
+                <!-- Write Form -->
+                <div class="board-form glass-panel">
+                    <h3>문의 남기기</h3>
+                    <form id="post-form">
+                        <div class="form-group">
+                            <label for="post-author" class="sr-only">작성자 이름</label>
+                            <input type="text" id="post-author" placeholder="작성자 이름 (기업명)" required tabindex="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="post-password" class="sr-only">비밀번호</label>
+                            <input type="password" id="post-password" placeholder="비밀번호 (글 수정/삭제시 필요)" required tabindex="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="post-content" class="sr-only">내용</label>
+                            <textarea id="post-content" rows="4" placeholder="제품 도입 문의사항이나 미래 로봇랩 협력 문의를 남겨주세요!" required tabindex="0"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-secondary interactive-btn" tabindex="0">등록하기</button>
+                    </form>
+                </div>
+
+                <!-- Post List -->
+                <div class="board-list glass-panel">
+                    <h3>게시글 목록</h3>
+                    <div id="posts-container" aria-live="polite">
+                        <!-- Posts will be generated here by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Delete Modal -->
+    <div id="delete-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content glass-panel">
+            <button class="close-btn" aria-label="모달 닫기" tabindex="0">&times;</button>
+            <h3 id="modal-title">글 삭제</h3>
+            <p>이 글을 삭제하려면 작성 시 입력한 비밀번호를 입력하세요.</p>
+            <label for="delete-password" class="sr-only">비밀번호 확인</label>
+            <input type="password" id="delete-password" placeholder="비밀번호" tabindex="0">
+            <input type="hidden" id="delete-post-id">
+            <div class="modal-actions">
+                <button id="confirm-delete" class="btn btn-danger interactive-btn" tabindex="0">삭제</button>
+                <button id="cancel-delete" class="btn interactive-btn" tabindex="0">취소</button>
+            </div>
+            <p id="delete-error" class="error-msg" role="alert"></p>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" aria-live="polite"></div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-logo">NEXTEP<span>DYNAMICS</span></div>
+            <p>Powered by Future Robot Lab</p>
+            <p class="copyright">© 2026 Nextep Dynamics. All rights reserved.</p>
+            <div class="footer-disclaimer" role="note" aria-label="포트폴리오 안내">
+                <span class="footer-disclaimer-icon">⚠️</span>
+                <p><strong>포트폴리오 안내:</strong> 본 웹사이트는 웹 개발 포트폴리오 용도로 제작되었으며, 기재된 기업·기술·기관(미래 로봇랩 포함) 관련 내용은 모두 <strong>가상의 설정</strong>입니다.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase Compat 라이브러리 (로컬 환경 지원용) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>

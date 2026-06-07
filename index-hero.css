@@ -1,0 +1,408 @@
+/* ================================================
+   index-hero.css  — 메인 히어로 섹션 고도화 스타일
+   ================================================ */
+
+/* ── 스크롤 진행 바 ──────────────────────────────── */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #00e5ff, #0072ff, #00e5ff);
+    background-size: 200% 100%;
+    animation: progressShimmer 2s linear infinite;
+    z-index: 9999;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+@keyframes progressShimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ── 히어로 v2 오버라이드 ──────────────────────────── */
+.hero-v2 {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* 배경 이미지 제거하고 캔버스로 대체 */
+    background: var(--bg-color) !important;
+}
+
+.hero-v2::before {
+    /* 기존 배경이미지 오버라이드 */
+    background-image: none !important;
+    opacity: 0 !important;
+}
+
+/* ── 캔버스 배경 ─────────────────────────────────── */
+#hero-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ── 그리드 오버레이 ─────────────────────────────── */
+.hero-grid-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image:
+        radial-gradient(ellipse 70% 70% at 50% 40%, black 20%, transparent 80%);
+    -webkit-mask-image:
+        radial-gradient(ellipse 70% 70% at 50% 40%, black 20%, transparent 80%);
+}
+
+/* ── 좌측 수직 레이블 ────────────────────────────── */
+.hero-side-label {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: center center;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: rgba(0, 229, 255, 0.35);
+    white-space: nowrap;
+    z-index: 2;
+    user-select: none;
+}
+
+/* ── 히어로 컨텐츠 z-index 조정 ────────────────── */
+.hero-v2 .hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* ── 배지 + LIVE 뱃지 레이아웃 ──────────────────── */
+.hero-badge-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* LIVE 뱃지 */
+.hero-live-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #00e5ff;
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 20px;
+    padding: 0.35rem 0.9rem;
+}
+
+.dot-inner {
+    width: 7px;
+    height: 7px;
+    background: #00e5ff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: livePulse 1.4s ease-in-out infinite;
+    box-shadow: 0 0 6px rgba(0, 229, 255, 0.8);
+}
+
+@keyframes livePulse {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.5); opacity: 0.6; }
+}
+
+/* ── 히어로 H1 강화 ─────────────────────────────── */
+.hero-v2 h1 {
+    font-size: 5.2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+    /* 글자 뒤 미묘한 글로우 */
+    text-shadow: 0 0 80px rgba(0, 229, 255, 0.1);
+}
+
+.typewriter-wrap {
+    display: inline-block;
+    min-height: 1.2em;
+}
+
+/* ── 버튼 글로우 강화 ────────────────────────────── */
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+    gap: 0.6rem;
+}
+
+.btn-glow::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.25);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+.btn-glow:hover::before {
+    left: 120%;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.5), 0 8px 32px rgba(0, 229, 255, 0.25);
+}
+
+/* 버튼 아이콘 정렬 */
+.btn svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover svg {
+    transform: translateX(3px);
+}
+
+/* ── 히어로 통계 카드 ────────────────────────────── */
+.hero-stats {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: 4rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 229, 255, 0.18);
+    border-radius: 20px;
+    padding: 1.6rem 2.5rem;
+    backdrop-filter: blur(16px);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(0, 229, 255, 0.06) inset;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.hero-stats:hover {
+    border-color: rgba(0, 229, 255, 0.35);
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(0, 229, 255, 0.08),
+        0 0 0 1px rgba(0, 229, 255, 0.1) inset;
+}
+
+.hstat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.hstat:hover {
+    transform: translateY(-4px);
+}
+
+.hstat-num {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--accent-color);
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.hstat-unit {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    vertical-align: super;
+}
+
+.hstat-label {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-top: 0.4rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.hstat-divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+/* ── 스크롤 인디케이터 ──────────────────────────── */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    animation: scrollBounce 2.5s ease-in-out infinite;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+    animation: none;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+.scroll-text {
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.scroll-mouse {
+    width: 22px;
+    height: 36px;
+    border: 2px solid rgba(0, 229, 255, 0.5);
+    border-radius: 11px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+}
+
+.scroll-wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    animation: scrollWheel 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollWheel {
+    0%   { opacity: 1; transform: translateY(0); }
+    80%  { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 0; transform: translateY(0); }
+}
+
+/* ── 섹션 진입 강화 애니메이션 ───────────────────── */
+/* 제품 카드 섹션 위에 구분선 그라디언트 추가 */
+.portfolio {
+    position: relative;
+}
+.portfolio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+}
+
+/* ── 히어로 배경 로봇 이미지 (캔버스 위) ─────────── */
+.hero-v2 .hero-bg-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 90%;
+    opacity: 0.07;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: contain;
+    object-position: bottom right;
+    mask-image: linear-gradient(to left, black, transparent 60%);
+    -webkit-mask-image: linear-gradient(to left, black, transparent 60%);
+}
+
+/* ── 반응형 ─────────────────────────────────────── */
+@media (max-width: 992px) {
+    .hero-v2 h1 {
+        font-size: 3.8rem;
+    }
+    .hero-side-label {
+        display: none;
+    }
+    .hstat {
+        padding: 0 1.5rem;
+    }
+    .hstat-num {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-v2 h1 {
+        font-size: 2.8rem;
+        letter-spacing: -1px;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 2rem;
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .hstat-divider {
+        width: 80px;
+        height: 1px;
+    }
+
+    .hstat {
+        padding: 0;
+    }
+
+    .scroll-indicator {
+        bottom: 1.5rem;
+    }
+
+    .hero-badge-wrap {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-v2 h1 {
+        font-size: 2.2rem;
+    }
+    .hstat-num {
+        font-size: 1.8rem;
+    }
+}

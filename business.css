@@ -1,0 +1,1176 @@
+/* ================================================
+   business.css — 사업 분야 페이지 전용 스타일
+   ================================================ */
+
+/* ── 도메인별 색상 변수 ──────────────────────────── */
+:root {
+    --rescue:   #ff4e42;   /* 재난구조 — 레드 */
+    --service:  #00e5ff;   /* 서비스   — 시안 */
+    --factory:  #ffa726;   /* 팩토리   — 오렌지 */
+    --consumer: #ab47bc;   /* 소비자   — 퍼플 */
+    --defense:  #42a5f5;   /* 국방     — 블루 */
+    --platform: #66bb6a;   /* 플랫폼   — 그린 */
+}
+
+/* ════════════════════════════════════════════════
+   HERO
+════════════════════════════════════════════════ */
+.biz-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: calc(var(--nav-height) + 5rem) 2rem 7rem;
+    overflow: hidden;
+    background: var(--bg-color);
+    max-width: 100%;
+}
+
+#biz-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.biz-hero-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(0,229,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,.035) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 15%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, black 15%, transparent 75%);
+}
+
+.biz-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 960px;
+}
+
+/* 배지 행 */
+.biz-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.biz-domain-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-family: var(--font-heading);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-color);
+    background: rgba(0,229,255,.07);
+    border: 1px solid rgba(0,229,255,.25);
+    border-radius: 20px;
+    padding: .35rem .9rem;
+}
+
+/* H1 */
+.biz-hero-inner h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+}
+
+.biz-hero-desc {
+    color: var(--text-secondary);
+    font-size: 1.18rem;
+    line-height: 1.85;
+    margin-bottom: 3rem;
+}
+
+.biz-hero-desc strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* KPI 행 */
+.biz-kpi-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: rgba(255,255,255,.02);
+    border: 1px solid rgba(0,229,255,.16);
+    border-radius: 20px;
+    padding: 1.6rem 1rem;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    flex-wrap: wrap;
+    row-gap: 1rem;
+}
+
+.biz-kpi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+    transition: transform .3s;
+}
+
+.biz-kpi:hover { transform: translateY(-4px); }
+
+.biz-kpi-num {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--accent-color);
+    line-height: 1;
+}
+
+.biz-kpi-unit {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.biz-kpi-label {
+    font-size: .8rem;
+    color: var(--text-secondary);
+    margin-top: .3rem;
+    white-space: nowrap;
+}
+
+.biz-kpi-sep {
+    width: 1px;
+    height: 44px;
+    background: rgba(255,255,255,.1);
+}
+
+/* 스크롤 큐 */
+.biz-scroll-cue {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+    text-decoration: none;
+    color: rgba(0,229,255,.6);
+    font-family: var(--font-heading);
+    font-size: .65rem;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    animation: bizScroll 2.5s ease-in-out infinite;
+    transition: color .3s;
+}
+
+.biz-scroll-cue:hover { color: var(--accent-color); animation: none; }
+
+@keyframes bizScroll {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(8px); }
+}
+
+.biz-scroll-mouse {
+    width: 20px;
+    height: 34px;
+    border: 2px solid currentColor;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+.biz-scroll-dot {
+    width: 4px;
+    height: 7px;
+    background: currentColor;
+    border-radius: 2px;
+    animation: bizDot 1.8s ease-in-out infinite;
+}
+
+@keyframes bizDot {
+    0%   { opacity: 1; transform: translateY(0); }
+    80%  { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 0; transform: translateY(0); }
+}
+
+/* ════════════════════════════════════════════════
+   사업 개요 — 도메인 네비게이션
+════════════════════════════════════════════════ */
+.biz-overview {
+    padding: 5rem 2rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.biz-overview-inner { }
+
+.biz-domain-nav {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.biz-dnav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+    padding: 1.6rem .8rem;
+    background: rgba(255,255,255,.02);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: .88rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+    transition: transform .3s, border-color .3s, background .3s, color .3s;
+}
+
+.biz-dnav-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0,229,255,.35);
+    background: rgba(0,229,255,.05);
+    color: var(--accent-color);
+}
+
+.biz-dnav-item.dnav-active {
+    border-color: rgba(0,229,255,.4);
+    background: rgba(0,229,255,.08);
+    color: var(--accent-color);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,229,255,.1);
+}
+
+.biz-dnav-icon {
+    font-size: 1.9rem;
+    display: block;
+}
+
+/* ════════════════════════════════════════════════
+   DOMAIN 섹션 공통
+════════════════════════════════════════════════ */
+.biz-domain {
+    padding: 7rem 2rem;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.biz-domain::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 300px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+}
+
+.biz-domain-alt {
+    background: rgba(255,255,255,.008);
+}
+
+.biz-domain-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.biz-domain-inner-rev {
+    direction: rtl;
+}
+
+.biz-domain-inner-rev > * {
+    direction: ltr;
+}
+
+/* ── 비주얼 카드 ── */
+.biz-visual-card {
+    background: rgba(255,255,255,.025);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 24px;
+    padding: 2.2rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform .4s cubic-bezier(.25,.8,.25,1), box-shadow .4s;
+    position: relative;
+}
+
+.biz-visual-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(0,0,0,.5);
+}
+
+/* B2X 뱃지 */
+.biz-visual-badge {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: .3rem .8rem;
+    border-radius: 20px;
+}
+
+.biz-visual-badge.rescue   { background: rgba(255,78,66,.15);  color: var(--rescue);   border: 1px solid rgba(255,78,66,.3); }
+.biz-visual-badge.service  { background: rgba(0,229,255,.1);   color: var(--service);  border: 1px solid rgba(0,229,255,.3); }
+.biz-visual-badge.factory  { background: rgba(255,167,38,.12); color: var(--factory);  border: 1px solid rgba(255,167,38,.3); }
+.biz-visual-badge.consumer { background: rgba(171,71,188,.12); color: var(--consumer); border: 1px solid rgba(171,71,188,.3); }
+.biz-visual-badge.defense  { background: rgba(66,165,245,.12); color: var(--defense);  border: 1px solid rgba(66,165,245,.3); }
+.biz-visual-badge.platform { background: rgba(102,187,106,.12);color: var(--platform); border: 1px solid rgba(102,187,106,.3);}
+
+/* 아이콘 배경 */
+.biz-visual-icon-wrap {
+    width: 80px; height: 80px;
+    border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.biz-big-icon { font-size: 2.8rem; }
+
+.rescue-bg   { background: rgba(255,78,66,.12);  }
+.service-bg  { background: rgba(0,229,255,.1);   }
+.factory-bg  { background: rgba(255,167,38,.12); }
+.consumer-bg { background: rgba(171,71,188,.12); }
+.defense-bg  { background: rgba(66,165,245,.12); }
+.platform-bg { background: rgba(102,187,106,.12);}
+
+/* 시장 규모 바 */
+.biz-market-bar { margin-top: .5rem; }
+.biz-market-label { font-size: .78rem; color: var(--text-secondary); display: block; margin-bottom: .5rem; }
+.biz-market-val   { font-size: .82rem; color: var(--text-secondary); display: block; margin-top: .4rem; font-weight: 600; }
+
+.biz-bar-wrap {
+    width: 100%; height: 5px;
+    background: rgba(255,255,255,.07);
+    border-radius: 4px; overflow: hidden;
+}
+
+.biz-bar-fill {
+    height: 100%; width: 0;
+    border-radius: 4px;
+    transition: width 1.6s cubic-bezier(.25,.8,.25,1);
+    position: relative; overflow: hidden;
+}
+
+.biz-bar-fill::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.35), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
+
+.rescue-fill   { background: linear-gradient(90deg, var(--rescue),   #ff8a80); }
+.service-fill  { background: linear-gradient(90deg, var(--service),  #80d8ff); }
+.factory-fill  { background: linear-gradient(90deg, var(--factory),  #ffe082); }
+.consumer-fill { background: linear-gradient(90deg, var(--consumer), #ce93d8); }
+.defense-fill  { background: linear-gradient(90deg, var(--defense),  #90caf9); }
+.platform-fill { background: linear-gradient(90deg, var(--platform), #a5d6a7); }
+
+/* 통계 수치 */
+.biz-visual-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .8rem;
+}
+
+.bvstat {
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 10px;
+    padding: .8rem .5rem;
+}
+
+.bvstat-n { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 900; color: var(--accent-color); }
+.bvstat-l { font-size: .72rem; color: var(--text-secondary); margin-top: .2rem; line-height: 1.3; }
+
+/* ── 텍스트 영역 ── */
+.biz-domain-num {
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(255,255,255,.04);
+    line-height: 1;
+    letter-spacing: -4px;
+    user-select: none;
+    margin-bottom: -.5rem;
+}
+
+.biz-sector-tag {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: .35rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.rescue-tag   { background: rgba(255,78,66,.1);   color: var(--rescue);   border: 1px solid rgba(255,78,66,.25); }
+.service-tag  { background: rgba(0,229,255,.08);  color: var(--service);  border: 1px solid rgba(0,229,255,.25); }
+.factory-tag  { background: rgba(255,167,38,.1);  color: var(--factory);  border: 1px solid rgba(255,167,38,.25);}
+.consumer-tag { background: rgba(171,71,188,.1);  color: var(--consumer); border: 1px solid rgba(171,71,188,.25);}
+.defense-tag  { background: rgba(66,165,245,.1);  color: var(--defense);  border: 1px solid rgba(66,165,245,.25);}
+.platform-tag { background: rgba(102,187,106,.1); color: var(--platform); border: 1px solid rgba(102,187,106,.25);}
+
+.biz-text h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.biz-lead {
+    color: var(--text-primary);
+    font-size: 1.12rem;
+    font-weight: 500;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+}
+
+.biz-body {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+}
+
+/* 기능 리스트 */
+.biz-features { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+
+.biz-feat {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(255,255,255,.02);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 14px;
+    padding: 1.1rem 1.3rem;
+    transition: background .3s, border-color .3s, transform .3s;
+}
+
+.biz-feat:hover {
+    background: rgba(255,255,255,.04);
+    transform: translateX(6px);
+}
+
+.biz-feat-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+}
+
+.rescue-icon   { background: rgba(255,78,66,.12);   }
+.service-icon  { background: rgba(0,229,255,.1);    }
+.factory-icon  { background: rgba(255,167,38,.12);  }
+.consumer-icon { background: rgba(171,71,188,.12);  }
+.defense-icon  { background: rgba(66,165,245,.12);  }
+.platform-icon { background: rgba(102,187,106,.12); }
+
+.biz-feat strong { font-size: 1rem; font-weight: 700; display: block; margin-bottom: .25rem; }
+.biz-feat p { color: var(--text-secondary); font-size: .92rem; margin: 0; line-height: 1.6; }
+
+.biz-tags { display: flex; flex-wrap: wrap; gap: .6rem; }
+
+/* ── 라이브 대시보드 (서비스 도메인) ── */
+.biz-mini-dash {
+    background: rgba(0,0,0,.3);
+    border: 1px solid rgba(0,229,255,.15);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    font-size: .88rem;
+}
+
+.biz-dash-row { display: flex; align-items: center; gap: .6rem; margin-bottom: .8rem; }
+.biz-dash-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; animation: livePulse 1.4s infinite; }
+.biz-dash-title { font-weight: 600; font-size: .82rem; }
+.biz-dash-data { display: flex; flex-direction: column; gap: .5rem; }
+.biz-dash-data > div { display: flex; align-items: center; gap: .6rem; }
+.biz-dash-data > div > span:first-child { color: var(--text-secondary); font-size: .78rem; min-width: 50px; }
+.biz-dash-val { font-weight: 700; color: var(--accent-color); font-size: .9rem; }
+.biz-mini-bar { flex: 1; height: 5px; background: rgba(255,255,255,.1); border-radius: 3px; overflow: hidden; }
+.biz-mini-fill { height: 100%; border-radius: 3px; transition: width .5s; }
+.service-dot { background: var(--service); box-shadow: 0 0 6px var(--service); }
+.factory-dot { background: var(--factory); box-shadow: 0 0 6px var(--factory); }
+
+@keyframes livePulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.6);opacity:.5} }
+
+/* ── AI 불량 감지 데모 ── */
+.biz-defect-demo {
+    background: rgba(0,0,0,.3);
+    border: 1px solid rgba(255,167,38,.18);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+}
+
+.biz-defect-header {
+    display: flex; align-items: center; gap: .5rem;
+    font-size: .82rem; font-weight: 600;
+    margin-bottom: .8rem;
+    color: var(--factory);
+}
+
+.biz-defect-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4px;
+    margin-bottom: .7rem;
+}
+
+.biz-defect-cell {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.06);
+    transition: background .3s, border-color .3s;
+}
+
+.biz-defect-cell.ok { background: rgba(102,187,106,.2); border-color: rgba(102,187,106,.3); }
+.biz-defect-cell.ng { background: rgba(255,78,66,.3); border-color: rgba(255,78,66,.5); animation: ngFlash .5s ease; }
+
+@keyframes ngFlash { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+.biz-defect-result { font-size: .8rem; color: var(--text-secondary); text-align: right; }
+.biz-defect-result strong { color: var(--factory); }
+
+/* ── 감정 표현 로봇 얼굴 ── */
+.biz-emotion-demo {
+    display: flex; flex-direction: column; align-items: center; gap: .8rem;
+    padding: 1rem;
+    background: rgba(171,71,188,.05);
+    border: 1px solid rgba(171,71,188,.18);
+    border-radius: 12px;
+}
+
+.biz-emotion-face {
+    width: 80px; height: 64px;
+    background: rgba(171,71,188,.15);
+    border: 2px solid rgba(171,71,188,.3);
+    border-radius: 20px;
+    display: flex; align-items: center; justify-content: space-around;
+    padding: 10px 12px;
+    position: relative;
+}
+
+.biz-eye {
+    width: 16px; height: 16px;
+    background: rgba(171,71,188,.4);
+    border: 2px solid var(--consumer);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+}
+
+.biz-pupil {
+    width: 6px; height: 6px;
+    background: var(--consumer);
+    border-radius: 50%;
+    transition: transform .3s;
+}
+
+.biz-mouth {
+    position: absolute;
+    bottom: 10px; left: 50%;
+    transform: translateX(-50%);
+    width: 30px; height: 12px;
+    border: 2px solid var(--consumer);
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    transition: border-radius .5s, height .5s;
+}
+
+.biz-emotion-label { font-size: .85rem; color: var(--consumer); font-weight: 600; }
+
+/* ── 코드 블록 ── */
+.biz-code-block {
+    background: #0d1117;
+    border: 1px solid rgba(102,187,106,.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.biz-code-header {
+    display: flex; align-items: center; gap: .5rem;
+    background: rgba(255,255,255,.04);
+    padding: .7rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.biz-code-dot { width: 10px; height: 10px; border-radius: 50%; }
+.biz-code-dot.r { background: #ff5f57; }
+.biz-code-dot.y { background: #febc2e; }
+.biz-code-dot.g { background: #28c840; }
+.biz-code-fname { margin-left: .5rem; font-size: .78rem; color: var(--text-secondary); font-family: monospace; }
+
+.biz-code-body {
+    margin: 0;
+    padding: 1rem 1.2rem;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: .82rem;
+    line-height: 1.7;
+    color: #e6edf3;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.c-kw  { color: #ff7b72; }
+.c-str { color: #a5d6ff; }
+.c-cm  { color: #8b949e; }
+.c-op  { color: #ffa657; }
+
+/* ════════════════════════════════════════════════
+   시장 규모 섹션
+════════════════════════════════════════════════ */
+.biz-market-section {
+    background: rgba(0,229,255,.02);
+    border-top: 1px solid rgba(0,229,255,.08);
+    border-bottom: 1px solid rgba(0,229,255,.08);
+    padding: 7rem 2rem;
+    margin: 4rem 0;
+    max-width: 100%;
+}
+
+.biz-market-inner { max-width: 1200px; margin: 0 auto; }
+
+.biz-market-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.biz-mcard {
+    background: rgba(255,255,255,.02);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 18px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .5rem;
+    transition: transform .3s, border-color .3s;
+}
+
+.biz-mcard:hover { transform: translateY(-6px); border-color: rgba(0,229,255,.2); }
+
+.biz-mcard-icon { font-size: 1.8rem; }
+.biz-mcard-sector { font-size: .9rem; color: var(--text-secondary); font-weight: 600; }
+.biz-mcard-val { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; }
+
+.rescue-text   { color: var(--rescue);   }
+.service-text  { color: var(--service);  }
+.factory-text  { color: var(--factory);  }
+.consumer-text { color: var(--consumer); }
+.defense-text  { color: var(--defense);  }
+.platform-text { color: var(--platform); }
+
+.biz-mcard-bar {
+    height: 4px;
+    width: 100%;
+    background: rgba(255,255,255,.06);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: .3rem;
+}
+.biz-mcard-fill { height: 100%; width: 0; border-radius: 3px; transition: width 1.4s cubic-bezier(.25,.8,.25,1); }
+
+.biz-total {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2.5rem;
+    background: rgba(0,229,255,.04);
+    border: 1px solid rgba(0,229,255,.2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+
+.biz-total-label { font-size: 1rem; color: var(--text-secondary); }
+.biz-total-num   { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 900; color: var(--accent-color); }
+.biz-total-num strong { color: inherit; }
+.biz-total-sub   { font-size: .85rem; color: var(--text-secondary); }
+
+/* ════════════════════════════════════════════════
+   CTA 섹션
+════════════════════════════════════════════════ */
+.biz-cta {
+    max-width: 840px;
+    margin: 0 auto 7rem;
+    padding: 4.5rem 3rem;
+    text-align: center;
+    background: rgba(0,229,255,.03);
+    border: 1px solid rgba(0,229,255,.18);
+    border-radius: 28px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 80px rgba(0,229,255,.05);
+}
+
+.biz-cta h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; }
+.biz-cta p  { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.8; }
+.biz-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ════════════════════════════════════════════════
+   전략 카드 — 헤더 (제품명 + 시장 표시)
+════════════════════════════════════════════════ */
+.biz-strategy-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    margin-bottom: .3rem;
+}
+
+.biz-strategy-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.biz-strategy-product {
+    font-size: .92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: .2rem;
+}
+
+.biz-strategy-market {
+    font-size: .78rem;
+    color: var(--text-secondary);
+}
+
+/* Soft background variants */
+.rescue-bg-soft   { background: rgba(255,78,66,.07);   }
+.service-bg-soft  { background: rgba(0,229,255,.06);   }
+.factory-bg-soft  { background: rgba(255,167,38,.07);  }
+.consumer-bg-soft { background: rgba(171,71,188,.07);  }
+.defense-bg-soft  { background: rgba(66,165,245,.07);  }
+.platform-bg-soft { background: rgba(102,187,106,.07); }
+
+/* ════════════════════════════════════════════════
+   수익 구조 (Revenue Model)
+════════════════════════════════════════════════ */
+.biz-revenue-model {
+    background: rgba(0,0,0,.25);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+}
+
+.brm-title {
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: .8rem;
+    letter-spacing: .5px;
+}
+
+.brm-item {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    margin-bottom: .6rem;
+}
+
+.brm-item:last-child { margin-bottom: 0; }
+
+.brm-type {
+    font-size: .72rem;
+    font-weight: 700;
+    padding: .2rem .65rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.brm-desc {
+    font-size: .82rem;
+    color: var(--text-secondary);
+}
+
+/* Chip 색상 */
+.rescue-chip   { background: rgba(255,78,66,.15);   color: var(--rescue);   border: 1px solid rgba(255,78,66,.3); }
+.service-chip  { background: rgba(0,229,255,.1);    color: var(--service);  border: 1px solid rgba(0,229,255,.3); }
+.factory-chip  { background: rgba(255,167,38,.12);  color: var(--factory);  border: 1px solid rgba(255,167,38,.3); }
+.consumer-chip { background: rgba(171,71,188,.12);  color: var(--consumer); border: 1px solid rgba(171,71,188,.3); }
+.defense-chip  { background: rgba(66,165,245,.12);  color: var(--defense);  border: 1px solid rgba(66,165,245,.3); }
+.platform-chip { background: rgba(102,187,106,.12); color: var(--platform); border: 1px solid rgba(102,187,106,.3); }
+
+/* ════════════════════════════════════════════════
+   로드맵 (Roadmap)
+════════════════════════════════════════════════ */
+.biz-roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: .5rem;
+}
+
+.brmap-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: rgba(255,255,255,.02);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 12px;
+    padding: .9rem 1.1rem;
+    transition: background .3s, transform .3s;
+}
+
+.brmap-item:hover {
+    background: rgba(255,255,255,.04);
+    transform: translateX(4px);
+}
+
+.brmap-year {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 900;
+    min-width: 48px;
+    flex-shrink: 0;
+}
+
+.rescue-year   { color: var(--rescue);   }
+.factory-year  { color: var(--factory);  }
+.platform-year { color: var(--platform); }
+
+.brmap-content strong {
+    display: block;
+    font-size: .95rem;
+    font-weight: 700;
+    margin-bottom: .2rem;
+    color: var(--text-primary);
+}
+
+.brmap-content p {
+    font-size: .83rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ════════════════════════════════════════════════
+   구독 수익 시뮬레이터
+════════════════════════════════════════════════ */
+.biz-sub-simulator {
+    background: rgba(0,0,0,.25);
+    border: 1px solid rgba(0,229,255,.15);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+}
+
+.biz-sub-header {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--service);
+    margin-bottom: .9rem;
+}
+
+.biz-sub-body { display: flex; flex-direction: column; gap: .6rem; }
+
+.biz-sub-row {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    font-size: .82rem;
+    color: var(--text-secondary);
+}
+
+.biz-sub-row input[type="range"] {
+    flex: 1;
+    accent-color: var(--service);
+    cursor: pointer;
+}
+
+.biz-sub-val {
+    font-weight: 700;
+    color: var(--text-primary);
+    min-width: 40px;
+    text-align: right;
+}
+
+.biz-sub-result {
+    background: rgba(0,229,255,.05);
+    border-radius: 8px;
+    padding: .5rem .7rem;
+    border: 1px solid rgba(0,229,255,.12);
+}
+
+.biz-sub-money {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-left: auto;
+}
+
+/* ════════════════════════════════════════════════
+   ROI 계산기
+════════════════════════════════════════════════ */
+.biz-roi-calc {
+    background: rgba(0,0,0,.25);
+    border: 1px solid rgba(255,167,38,.18);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+}
+
+.biz-roi-header {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--factory);
+    margin-bottom: .9rem;
+}
+
+.biz-roi-body { display: flex; flex-direction: column; gap: .6rem; }
+
+.biz-roi-row {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    font-size: .82rem;
+    color: var(--text-secondary);
+}
+
+.biz-roi-row input[type="range"] {
+    flex: 1;
+    accent-color: var(--factory);
+    cursor: pointer;
+}
+
+.biz-roi-val {
+    font-weight: 700;
+    color: var(--text-primary);
+    min-width: 30px;
+    text-align: right;
+}
+
+.biz-roi-result {
+    background: rgba(255,167,38,.06);
+    border-radius: 8px;
+    padding: .5rem .7rem;
+    border: 1px solid rgba(255,167,38,.15);
+}
+
+.biz-roi-money {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-left: auto;
+}
+
+/* ════════════════════════════════════════════════
+   수익 퍼널 (Funnel)
+════════════════════════════════════════════════ */
+.biz-funnel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+    padding: 1rem 1.2rem;
+    background: rgba(0,0,0,.25);
+    border: 1px solid rgba(171,71,188,.15);
+    border-radius: 12px;
+}
+
+.biz-funnel-title {
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    align-self: flex-start;
+    margin-bottom: .4rem;
+}
+
+.biz-funnel-step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .55rem 1rem;
+    border-radius: 8px;
+    background: rgba(171,71,188,.08);
+    border: 1px solid rgba(171,71,188,.15);
+    transition: background .3s;
+    font-size: .82rem;
+}
+
+.biz-funnel-step:hover { background: rgba(171,71,188,.14); }
+
+.biz-funnel-step span:last-child {
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+.f-wide   { width: 100%; }
+.f-mid    { width: 85%; }
+.f-narrow { width: 65%; }
+
+/* ════════════════════════════════════════════════
+   방산 진입 단계 (Defense Stages)
+════════════════════════════════════════════════ */
+.biz-defense-stages {
+    background: rgba(0,0,0,.25);
+    border: 1px solid rgba(66,165,245,.15);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+}
+
+.biz-ds-title {
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: .8rem;
+}
+
+.biz-ds-step {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: .5rem 0;
+    font-size: .83rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255,255,255,.04);
+}
+
+.biz-ds-step:last-child { border-bottom: none; padding-bottom: 0; }
+
+.biz-ds-num {
+    font-size: .7rem;
+    font-weight: 700;
+    padding: .2rem .6rem;
+    border-radius: 20px;
+    background: rgba(255,255,255,.06);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255,255,255,.1);
+    flex-shrink: 0;
+}
+
+.active-stage {
+    color: var(--defense);
+    font-weight: 600;
+}
+
+.active-stage .biz-ds-num { background: rgba(66,165,245,.12); color: var(--defense); border-color: rgba(66,165,245,.3); }
+
+/* ════════════════════════════════════════════════
+   라이선스 티어 (License Tiers)
+════════════════════════════════════════════════ */
+.biz-license-tiers {
+    background: rgba(0,0,0,.25);
+    border: 1px solid rgba(102,187,106,.15);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+}
+
+.biz-lt-title {
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    margin-bottom: .8rem;
+}
+
+.biz-lt-row {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .55rem .7rem;
+    border-radius: 8px;
+    margin-bottom: .4rem;
+    font-size: .83rem;
+    transition: background .2s;
+}
+
+.biz-lt-row:last-child { margin-bottom: 0; }
+.biz-lt-row:hover { background: rgba(255,255,255,.03); }
+
+.biz-lt-highlight {
+    background: rgba(102,187,106,.07);
+    border: 1px solid rgba(102,187,106,.2);
+}
+
+.biz-lt-tier {
+    font-weight: 700;
+    color: var(--text-primary);
+    min-width: 70px;
+}
+
+.biz-lt-price {
+    font-family: var(--font-heading);
+    font-size: .95rem;
+    font-weight: 800;
+    flex: 1;
+}
+
+.biz-lt-desc {
+    font-size: .75rem;
+    color: var(--text-secondary);
+}
+
+/* ════════════════════════════════════════════════
+   반응형
+════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+    .biz-domain-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .biz-domain-inner-rev { direction: ltr; }
+    .biz-domain-nav { grid-template-columns: repeat(3, 1fr); }
+    .biz-market-grid { grid-template-columns: repeat(2, 1fr); }
+    .biz-hero-inner h1 { font-size: 3.5rem; }
+    .biz-text h2 { font-size: 2rem; }
+    .f-mid   { width: 100%; }
+    .f-narrow{ width: 100%; }
+}
+
+@media (max-width: 768px) {
+    .biz-hero-inner h1 { font-size: 2.6rem; letter-spacing: -1px; }
+    .biz-kpi-row { flex-direction: column; gap: 1.2rem; padding: 2rem 1.5rem; }
+    .biz-kpi-sep { width: 60px; height: 1px; }
+    .biz-kpi { padding: 0; }
+    .biz-domain-nav { grid-template-columns: repeat(2, 1fr); }
+    .biz-market-grid { grid-template-columns: 1fr; }
+    .biz-cta { padding: 3rem 1.5rem; }
+    .biz-cta h2 { font-size: 1.8rem; }
+    .biz-visual-stats { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .biz-hero-inner h1 { font-size: 2rem; }
+    .biz-domain-nav { grid-template-columns: repeat(3, 1fr); }
+    .biz-domain-num { font-size: 4rem; }
+}

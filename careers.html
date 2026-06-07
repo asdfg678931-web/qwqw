@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인재채용 | Nextep Dynamics</title>
+    <meta name="description" content="Nextep Dynamics와 함께 로봇의 미래를 만들어 갈 인재를 찾습니다. 로보틱스, AI, 임베디드 소프트웨어 분야의 열정 있는 지원자를 환영합니다.">
+    <meta name="theme-color" content="#00e5ff">
+    <meta name="color-scheme" content="dark">
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="인재채용 | Nextep Dynamics">
+    <meta property="og:description" content="로봇 미래를 함께 만들 7개 포지션 오픈 — 소프트웨어/AI/하드웨어/기획">
+    <meta property="og:url"         content="https://nextep-dynamics.kr/careers.html">
+    <meta property="og:image"       content="https://nextep-dynamics.kr/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="인재채용 | Nextep Dynamics">
+    <meta name="twitter:description" content="로봇 미래를 함께 만들 7개 포지션 오픈 — 소프트웨어/AI/하드웨어/기획">
+    <meta name="twitter:image"       content="https://nextep-dynamics.kr/og-image.png">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://nextep-dynamics.kr/careers.html">
+    <!-- Preconnect (fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="careers.css">
+
+</head>
+<body>
+    <a href="#main-content" class="skip-link">본문 바로가기</a>
+
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="메인 네비게이션">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="홈으로 이동">NEXTEP<span>DYNAMICS</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html"         class="nav-item">회사소개</a></li>
+                <li><a href="index.html#products" class="nav-item">제품소개</a></li>
+                <li><a href="business.html"      class="nav-item">사업분야</a></li>
+                <li><a href="careers.html"       class="nav-item active">인재채용</a></li>
+                <li><a href="board.html"         class="nav-item">고객게시판</a></li>
+            </ul>
+            <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false" tabindex="0">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- ══════════════════════════════════
+             HERO
+        ══════════════════════════════════ -->
+        <section class="cr-hero" aria-label="인재채용 헤더">
+            <canvas id="cr-canvas" aria-hidden="true"></canvas>
+            <div class="cr-hero-grid" aria-hidden="true"></div>
+            <div class="cr-hero-inner">
+                <div class="cr-hero-badge fade-in-up">
+                    <span class="badge">We're Hiring</span>
+                    <span class="cr-open-badge">🟢 채용 중</span>
+                </div>
+                <h1 class="fade-in-up delay-1">
+                    로봇의 미래를<br>
+                    <span class="gradient-text">함께 만들 사람</span>
+                </h1>
+                <p class="cr-hero-desc fade-in-up delay-2">
+                    Nextep Dynamics는 <strong>소프트웨어 × 하드웨어 × AI</strong>의 경계를 허무는 팀입니다.<br>
+                    틀을 깨고 직접 만들고 싶은 사람이라면, 여기가 당신의 자리입니다.
+                </p>
+                <div class="cr-hero-actions fade-in-up delay-3">
+                    <a href="#positions" class="btn btn-primary" id="btn-positions">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        채용 공고 보기
+                    </a>
+                    <a href="#culture" class="btn btn-secondary" id="btn-culture">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                        팀 문화 보기
+                    </a>
+                </div>
+
+                <!-- 채용 통계 -->
+                <div class="cr-stats fade-in-up delay-3" aria-label="채용 현황">
+                    <div class="cr-stat" tabindex="0">
+                        <span class="cr-stat-num" id="cs-positions">0</span>
+                        <span class="cr-stat-unit">개</span>
+                        <span class="cr-stat-label">오픈 포지션</span>
+                    </div>
+                    <div class="cr-stat-div" aria-hidden="true"></div>
+                    <div class="cr-stat" tabindex="0">
+                        <span class="cr-stat-num" id="cs-team">0</span>
+                        <span class="cr-stat-unit">명</span>
+                        <span class="cr-stat-label">현재 팀원</span>
+                    </div>
+                    <div class="cr-stat-div" aria-hidden="true"></div>
+                    <div class="cr-stat" tabindex="0">
+                        <span class="cr-stat-num" id="cs-growth">0</span>
+                        <span class="cr-stat-unit">%</span>
+                        <span class="cr-stat-label">전년 대비 성장</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#culture" class="cr-scroll-cue" aria-label="아래로 스크롤" tabindex="0">
+                <div class="cr-scroll-mouse"><div class="cr-scroll-dot"></div></div>
+                <span>SCROLL</span>
+            </a>
+        </section>
+
+        <!-- ══════════════════════════════════
+             팀 문화
+        ══════════════════════════════════ -->
+        <section id="culture" class="cr-section" aria-labelledby="culture-title">
+            <div class="cr-inner">
+                <div class="section-title">
+                    <h2 id="culture-title">우리가 일하는 방식</h2>
+                    <p>Nextep Dynamics의 팀 문화와 핵심 가치</p>
+                </div>
+
+                <div class="cr-culture-grid">
+                    <div class="cr-culture-card slide-in-left" tabindex="0">
+                        <div class="cr-culture-icon" aria-hidden="true">🔨</div>
+                        <h3>직접 만든다</h3>
+                        <p>외주 없이 처음부터 끝까지 자체 개발합니다. 설계, 코딩, 테스트, 배포 — 모든 과정을 팀이 함께 합니다. 손으로 만진 코드에 자부심을 가집니다.</p>
+                    </div>
+                    <div class="cr-culture-card slide-in-left" style="transition-delay:.1s" tabindex="0">
+                        <div class="cr-culture-icon" aria-hidden="true">⚡</div>
+                        <h3>빠르게 실험한다</h3>
+                        <p>완벽한 계획보다 빠른 프로토타입을 믿습니다. 실패해도 괜찮습니다. 한 번의 이터레이션이 백 번의 회의보다 낫습니다. 동작하는 로봇이 진짜 답입니다.</p>
+                    </div>
+                    <div class="cr-culture-card slide-in-left" style="transition-delay:.2s" tabindex="0">
+                        <div class="cr-culture-icon" aria-hidden="true">🤝</div>
+                        <h3>투명하게 공유한다</h3>
+                        <p>코드 리뷰, 기술 공유, 정직한 피드백이 우리를 성장시킵니다. 모르면 모른다고 말할 수 있는 문화, 물어봐도 핀잔 없는 팀을 지향합니다.</p>
+                    </div>
+                    <div class="cr-culture-card slide-in-left" style="transition-delay:.3s" tabindex="0">
+                        <div class="cr-culture-icon" aria-hidden="true">🌱</div>
+                        <h3>함께 성장한다</h3>
+                        <p>팀원의 성장이 곧 회사의 성장입니다. 컨퍼런스 참가, 도서 구매, 온라인 강의 — 배움에 드는 비용은 회사가 지원합니다.</p>
+                    </div>
+                    <div class="cr-culture-card slide-in-left" style="transition-delay:.4s" tabindex="0">
+                        <div class="cr-culture-icon" aria-hidden="true">🎯</div>
+                        <h3>임팩트를 만든다</h3>
+                        <p>작은 스타트업이지만 우리의 코드는 실제 재난 현장, 실제 식당, 실제 공장에서 쓰입니다. 내가 짠 코드가 세상을 바꾸는 경험을 함께합니다.</p>
+                    </div>
+                    <div class="cr-culture-card slide-in-left" style="transition-delay:.5s" tabindex="0">
+                        <div class="cr-culture-icon" aria-hidden="true">🏫</div>
+                        <h3>랩과 함께한다</h3>
+                        <p><strong>미래 로봇랩</strong>과의 협력을 통해 후배 인재를 키웁니다. 인턴십, 졸업 프로젝트 멘토링, 기술 강연 등 오픈 이노베이션을 실천합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════
+             복리후생
+        ══════════════════════════════════ -->
+        <section class="cr-benefit-section" aria-labelledby="benefit-title">
+            <div class="cr-inner">
+                <div class="section-title">
+                    <h2 id="benefit-title">복리후생 & 혜택</h2>
+                    <p>우리가 팀원에게 제공하는 것들</p>
+                </div>
+                <div class="cr-benefits-grid fade-in">
+                    <div class="cr-benefit-item" tabindex="0">
+                        <span class="cr-benefit-icon" aria-hidden="true">💻</span>
+                        <strong>최신 장비 지원</strong>
+                        <span>MacBook Pro / 고사양 PC 선택 지급</span>
+                    </div>
+                    <div class="cr-benefit-item" tabindex="0">
+                        <span class="cr-benefit-icon" aria-hidden="true">📚</span>
+                        <strong>교육비 전액 지원</strong>
+                        <span>도서, 강의, 컨퍼런스 무제한 지원</span>
+                    </div>
+                    <div class="cr-benefit-item" tabindex="0">
+                        <span class="cr-benefit-icon" aria-hidden="true">⏰</span>
+                        <strong>자율 출퇴근</strong>
+                        <span>코어타임 11~16시, 나머지는 자율</span>
+                    </div>
+                    <div class="cr-benefit-item" tabindex="0">
+                        <span class="cr-benefit-icon" aria-hidden="true">🏠</span>
+                        <strong>재택근무 가능</strong>
+                        <span>주 2회 재택, 팀 협의에 따라 유연</span>
+                    </div>
+                    <div class="cr-benefit-item" tabindex="0">
+                        <span class="cr-benefit-icon" aria-hidden="true">🍱</span>
+                        <strong>점심 식대 지원</strong>
+                        <span>1일 1만 원 식대 + 간식 무제한</span>
+                    </div>
+                    <div class="cr-benefit-item" tabindex="0">
+                        <span class="cr-benefit-icon" aria-hidden="true">🎖️</span>
+                        <strong>스톡옵션</strong>
+                        <span>시리즈 A 이전 입사자 전원 부여</span>
+                    </div>
+                    <div class="cr-benefit-item" tabindex="0">
+                        <span class="cr-benefit-icon" aria-hidden="true">🧪</span>
+                        <strong>R&D 사이드 프로젝트</strong>
+                        <span>업무 시간 20% 자유 연구 허용</span>
+                    </div>
+                    <div class="cr-benefit-item" tabindex="0">
+                        <span class="cr-benefit-icon" aria-hidden="true">🌍</span>
+                        <strong>해외 전시회 파견</strong>
+                        <span>CES, 방산 전시회 등 해외 출장 기회</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════
+             채용 공고
+        ══════════════════════════════════ -->
+        <section id="positions" class="cr-section" aria-labelledby="positions-title">
+            <div class="cr-inner">
+                <div class="section-title">
+                    <h2 id="positions-title">오픈 포지션</h2>
+                    <p>현재 함께할 팀원을 모집하고 있습니다</p>
+                </div>
+
+                <!-- 필터 탭 -->
+                <div class="cr-filter-tabs" role="tablist" aria-label="직군 필터">
+                    <button class="cr-tab active" role="tab" data-filter="all" id="tab-all" aria-selected="true" tabindex="0">전체</button>
+                    <button class="cr-tab" role="tab" data-filter="sw" id="tab-sw" aria-selected="false" tabindex="0">소프트웨어</button>
+                    <button class="cr-tab" role="tab" data-filter="ai" id="tab-ai" aria-selected="false" tabindex="0">AI / 비전</button>
+                    <button class="cr-tab" role="tab" data-filter="hw" id="tab-hw" aria-selected="false" tabindex="0">하드웨어</button>
+                    <button class="cr-tab" role="tab" data-filter="biz" id="tab-biz" aria-selected="false" tabindex="0">기획 / 영업</button>
+                </div>
+
+                <!-- 공고 목록 -->
+                <div class="cr-positions-list" id="positions-list" role="list">
+
+                    <!-- SW 1 -->
+                    <div class="cr-job-card fade-in" data-category="sw" role="listitem" tabindex="0">
+                        <div class="cr-job-header">
+                            <div class="cr-job-title-wrap">
+                                <span class="cr-job-dept sw-dept">소프트웨어</span>
+                                <h3 class="cr-job-title">로봇 제어 소프트웨어 엔지니어</h3>
+                            </div>
+                            <span class="cr-job-badge cr-badge-open">채용 중</span>
+                        </div>
+                        <p class="cr-job-desc">이족·사족보행 로봇의 실시간 제어 알고리즘을 개발합니다. C/C++ 기반 RT-Linux 환경에서 역운동학(IK), 밸런싱 제어, SLAM을 구현합니다.</p>
+                        <div class="cr-job-tags">
+                            <span class="tag">C / C++</span>
+                            <span class="tag">ROS2</span>
+                            <span class="tag">RT-Linux</span>
+                            <span class="tag">역운동학(IK)</span>
+                        </div>
+                        <div class="cr-job-meta">
+                            <span class="cr-meta-item">📍 서울 / 재택 병행</span>
+                            <span class="cr-meta-item">⏱ 풀타임</span>
+                            <span class="cr-meta-item">🎓 무관 (실력 중심)</span>
+                        </div>
+                        <button class="cr-apply-btn sw-btn" id="apply-sw1" onclick="openApplyModal('로봇 제어 소프트웨어 엔지니어')">지원하기 →</button>
+                    </div>
+
+                    <!-- SW 2 -->
+                    <div class="cr-job-card fade-in" data-category="sw" role="listitem" tabindex="0">
+                        <div class="cr-job-header">
+                            <div class="cr-job-title-wrap">
+                                <span class="cr-job-dept sw-dept">소프트웨어</span>
+                                <h3 class="cr-job-title">임베디드 시스템 엔지니어</h3>
+                            </div>
+                            <span class="cr-job-badge cr-badge-open">채용 중</span>
+                        </div>
+                        <p class="cr-job-desc">아두이노, STM32, Raspberry Pi 기반 임베디드 소프트웨어를 개발합니다. 센서 드라이버, 통신 프로토콜(UART/SPI/I2C), 펌웨어 최적화를 담당합니다.</p>
+                        <div class="cr-job-tags">
+                            <span class="tag">임베디드 C</span>
+                            <span class="tag">STM32</span>
+                            <span class="tag">Arduino</span>
+                            <span class="tag">UART/SPI</span>
+                        </div>
+                        <div class="cr-job-meta">
+                            <span class="cr-meta-item">📍 서울</span>
+                            <span class="cr-meta-item">⏱ 풀타임 / 인턴</span>
+                            <span class="cr-meta-item">🎓 무관</span>
+                        </div>
+                        <button class="cr-apply-btn sw-btn" id="apply-sw2" onclick="openApplyModal('임베디드 시스템 엔지니어')">지원하기 →</button>
+                    </div>
+
+                    <!-- AI 1 -->
+                    <div class="cr-job-card fade-in" data-category="ai" role="listitem" tabindex="0">
+                        <div class="cr-job-header">
+                            <div class="cr-job-title-wrap">
+                                <span class="cr-job-dept ai-dept">AI / 비전</span>
+                                <h3 class="cr-job-title">컴퓨터 비전 / AI 엔지니어</h3>
+                            </div>
+                            <span class="cr-job-badge cr-badge-open">채용 중</span>
+                        </div>
+                        <p class="cr-job-desc">YOLOv8, CNN 기반 딥러닝 모델을 개발하고 스마트팩토리 불량 검출 및 로봇 비전 시스템에 적용합니다. ONNX Runtime 경량화 및 온디바이스 추론 최적화 경험 우대.</p>
+                        <div class="cr-job-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">YOLOv8</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">ONNX Runtime</span>
+                        </div>
+                        <div class="cr-job-meta">
+                            <span class="cr-meta-item">📍 서울 / 재택 병행</span>
+                            <span class="cr-meta-item">⏱ 풀타임</span>
+                            <span class="cr-meta-item">🎓 무관 (포트폴리오 필수)</span>
+                        </div>
+                        <button class="cr-apply-btn ai-btn" id="apply-ai1" onclick="openApplyModal('컴퓨터 비전 / AI 엔지니어')">지원하기 →</button>
+                    </div>
+
+                    <!-- AI 2 -->
+                    <div class="cr-job-card fade-in" data-category="ai" role="listitem" tabindex="0">
+                        <div class="cr-job-header">
+                            <div class="cr-job-title-wrap">
+                                <span class="cr-job-dept ai-dept">AI / 비전</span>
+                                <h3 class="cr-job-title">SLAM / 자율주행 엔지니어</h3>
+                            </div>
+                            <span class="cr-job-badge cr-badge-open">채용 중</span>
+                        </div>
+                        <p class="cr-job-desc">3D LiDAR 기반 SLAM 알고리즘 개발 및 자율주행 경로 계획 시스템을 구현합니다. ROS2 + Nav2 스택 경험자, 실내외 로봇 자율주행 프로젝트 경험 우대.</p>
+                        <div class="cr-job-tags">
+                            <span class="tag">ROS2 / Nav2</span>
+                            <span class="tag">LiDAR SLAM</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">경로 계획</span>
+                        </div>
+                        <div class="cr-job-meta">
+                            <span class="cr-meta-item">📍 서울</span>
+                            <span class="cr-meta-item">⏱ 풀타임</span>
+                            <span class="cr-meta-item">🎓 무관</span>
+                        </div>
+                        <button class="cr-apply-btn ai-btn" id="apply-ai2" onclick="openApplyModal('SLAM / 자율주행 엔지니어')">지원하기 →</button>
+                    </div>
+
+                    <!-- HW 1 -->
+                    <div class="cr-job-card fade-in" data-category="hw" role="listitem" tabindex="0">
+                        <div class="cr-job-header">
+                            <div class="cr-job-title-wrap">
+                                <span class="cr-job-dept hw-dept">하드웨어</span>
+                                <h3 class="cr-job-title">로봇 기구 설계 엔지니어</h3>
+                            </div>
+                            <span class="cr-job-badge cr-badge-open">채용 중</span>
+                        </div>
+                        <p class="cr-job-desc">이족·사족보행 로봇의 관절 구조 및 프레임 설계를 담당합니다. SolidWorks / CATIA 활용한 3D 모델링, 경량화 구조 설계, 액추에이터 선정 경험 우대.</p>
+                        <div class="cr-job-tags">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">구조 해석</span>
+                            <span class="tag">액추에이터</span>
+                            <span class="tag">3D 프린팅</span>
+                        </div>
+                        <div class="cr-job-meta">
+                            <span class="cr-meta-item">📍 서울</span>
+                            <span class="cr-meta-item">⏱ 풀타임</span>
+                            <span class="cr-meta-item">🎓 기계/메카트로닉스 전공 우대</span>
+                        </div>
+                        <button class="cr-apply-btn hw-btn" id="apply-hw1" onclick="openApplyModal('로봇 기구 설계 엔지니어')">지원하기 →</button>
+                    </div>
+
+                    <!-- BIZ 1 -->
+                    <div class="cr-job-card fade-in" data-category="biz" role="listitem" tabindex="0">
+                        <div class="cr-job-header">
+                            <div class="cr-job-title-wrap">
+                                <span class="cr-job-dept biz-dept">기획 / 영업</span>
+                                <h3 class="cr-job-title">B2B 영업 / 사업 개발 매니저</h3>
+                            </div>
+                            <span class="cr-job-badge cr-badge-open">채용 중</span>
+                        </div>
+                        <p class="cr-job-desc">외식업체·제조업체 대상 로봇 솔루션 영업 및 파트너십을 개발합니다. 프랜차이즈 본사, 중소 제조업체와의 계약 협상 및 도입 프로세스를 주도합니다.</p>
+                        <div class="cr-job-tags">
+                            <span class="tag">B2B 영업</span>
+                            <span class="tag">사업 개발</span>
+                            <span class="tag">파트너십</span>
+                            <span class="tag">제안서 작성</span>
+                        </div>
+                        <div class="cr-job-meta">
+                            <span class="cr-meta-item">📍 서울</span>
+                            <span class="cr-meta-item">⏱ 풀타임</span>
+                            <span class="cr-meta-item">🎓 무관 (외식/제조 경험자 우대)</span>
+                        </div>
+                        <button class="cr-apply-btn biz-btn" id="apply-biz1" onclick="openApplyModal('B2B 영업 / 사업 개발 매니저')">지원하기 →</button>
+                    </div>
+
+                    <!-- BIZ 2 -->
+                    <div class="cr-job-card fade-in" data-category="biz" role="listitem" tabindex="0">
+                        <div class="cr-job-header">
+                            <div class="cr-job-title-wrap">
+                                <span class="cr-job-dept biz-dept">기획 / 영업</span>
+                                <h3 class="cr-job-title">프로덕트 매니저 (PM)</h3>
+                            </div>
+                            <span class="cr-job-badge cr-badge-open">채용 중</span>
+                        </div>
+                        <p class="cr-job-desc">Nextep SDK 및 관제 대시보드의 로드맵을 기획하고 개발팀과 협업합니다. 고객 인터뷰, 기능 우선순위 결정, 스프린트 관리를 담당합니다.</p>
+                        <div class="cr-job-tags">
+                            <span class="tag">프로덕트 기획</span>
+                            <span class="tag">로드맵</span>
+                            <span class="tag">애자일</span>
+                            <span class="tag">사용자 인터뷰</span>
+                        </div>
+                        <div class="cr-job-meta">
+                            <span class="cr-meta-item">📍 서울 / 재택 병행</span>
+                            <span class="cr-meta-item">⏱ 풀타임</span>
+                            <span class="cr-meta-item">🎓 무관</span>
+                        </div>
+                        <button class="cr-apply-btn biz-btn" id="apply-biz2" onclick="openApplyModal('프로덕트 매니저 (PM)')">지원하기 →</button>
+                    </div>
+
+                </div><!-- /positions-list -->
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════
+             채용 프로세스
+        ══════════════════════════════════ -->
+        <section class="cr-process-section" aria-labelledby="process-title">
+            <div class="cr-inner">
+                <div class="section-title">
+                    <h2 id="process-title">채용 프로세스</h2>
+                    <p>지원부터 합류까지 — 평균 2주 이내 완료</p>
+                </div>
+                <div class="cr-process-steps fade-in" role="list">
+                    <div class="cr-step" role="listitem" tabindex="0">
+                        <div class="cr-step-num">01</div>
+                        <div class="cr-step-icon" aria-hidden="true">📝</div>
+                        <h3>서류 지원</h3>
+                        <p>이력서 + 포트폴리오(또는 GitHub) 제출. 학력·스펙보다 실제 작업물을 봅니다.</p>
+                        <span class="cr-step-time">~ 24시간 내 회신</span>
+                    </div>
+                    <div class="cr-step-arrow" aria-hidden="true">→</div>
+                    <div class="cr-step" role="listitem" tabindex="0">
+                        <div class="cr-step-num">02</div>
+                        <div class="cr-step-icon" aria-hidden="true">💬</div>
+                        <h3>컬처핏 인터뷰</h3>
+                        <p>30분 화상 미팅. 우리가 어떤 팀인지, 당신이 어떤 사람인지 서로 알아가는 시간입니다.</p>
+                        <span class="cr-step-time">~ 3일 이내</span>
+                    </div>
+                    <div class="cr-step-arrow" aria-hidden="true">→</div>
+                    <div class="cr-step" role="listitem" tabindex="0">
+                        <div class="cr-step-num">03</div>
+                        <div class="cr-step-icon" aria-hidden="true">🛠️</div>
+                        <h3>기술 과제</h3>
+                        <p>실무와 유사한 작은 과제를 드립니다. 정해진 정답은 없으며, 접근 방식과 코드 품질을 봅니다.</p>
+                        <span class="cr-step-time">3~5일 제출</span>
+                    </div>
+                    <div class="cr-step-arrow" aria-hidden="true">→</div>
+                    <div class="cr-step" role="listitem" tabindex="0">
+                        <div class="cr-step-num">04</div>
+                        <div class="cr-step-icon" aria-hidden="true">🤖</div>
+                        <h3>팀 인터뷰</h3>
+                        <p>함께 일할 팀원들과 만나는 자리입니다. 기술 심화 질문과 과제 리뷰를 진행합니다.</p>
+                        <span class="cr-step-time">~ 1주 이내</span>
+                    </div>
+                    <div class="cr-step-arrow" aria-hidden="true">→</div>
+                    <div class="cr-step cr-step-final" role="listitem" tabindex="0">
+                        <div class="cr-step-num final-num">05</div>
+                        <div class="cr-step-icon" aria-hidden="true">🎉</div>
+                        <h3>최종 합류</h3>
+                        <p>처우 협의 후 오퍼 레터 발송. 입사일은 협의하여 결정합니다. 환영합니다!</p>
+                        <span class="cr-step-time">즉시 가능</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════
+             인턴십
+        ══════════════════════════════════ -->
+        <section class="cr-intern-section" aria-labelledby="intern-title">
+            <div class="cr-inner">
+                <div class="cr-intern-card fade-in">
+                    <div class="cr-intern-left">
+                        <span class="cr-intern-badge">🔬 미래 로봇랩 인턴십</span>
+                        <h2 id="intern-title">미래 로봇랩<br>특별 인턴십 프로그램</h2>
+                        <p>미래 로봇랩에 관심 있는 누구나 지원 가능합니다. 실제 제품 개발에 참여하며, 개인 프로젝트와 연계도 가능합니다. 우수 인턴은 정직원 전환을 검토합니다.</p>
+                        <ul class="cr-intern-list">
+                            <li><span>✓</span> 학기 중 주 3일 파트타임 근무 가능</li>
+                            <li><span>✓</span> 실제 제품 코드에 기여하는 진짜 인턴십</li>
+                            <li><span>✓</span> 추천서 없이 직접 지원 가능</li>
+                            <li><span>✓</span> 인턴 기간 중 Nextep SDK 무료 라이선스 제공</li>
+                        </ul>
+                        <button class="btn btn-primary" id="btn-intern-apply" onclick="openApplyModal('미래 로봇랩 인턴십')">인턴십 지원하기</button>
+                    </div>
+                    <div class="cr-intern-right" aria-hidden="true">
+                        <div class="cr-intern-visual">
+                            <div class="cr-intern-robot">🤖</div>
+                            <div class="cr-intern-stat-wrap">
+                                <div class="cr-intern-stat">
+                                    <span class="cr-is-num">12</span>
+                                    <span class="cr-is-label">기수 수료 인원</span>
+                                </div>
+                                <div class="cr-intern-stat">
+                                    <span class="cr-is-num">4</span>
+                                    <span class="cr-is-label">정직원 전환</span>
+                                </div>
+                                <div class="cr-intern-stat">
+                                    <span class="cr-is-num">100%</span>
+                                    <span class="cr-is-label">실무 프로젝트 참여</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════
+             CTA
+        ══════════════════════════════════ -->
+        <section class="cr-cta fade-in" aria-labelledby="cr-cta-title">
+            <h2 id="cr-cta-title">원하는 포지션이 없으신가요?</h2>
+            <p>열정과 실력이 있다면 언제든 문을 두드려 주세요.<br>포지션이 없어도 먼저 연락 주시면 함께 방법을 찾겠습니다.</p>
+            <div class="cr-cta-btns">
+                <button class="btn btn-primary" id="btn-open-apply" onclick="openApplyModal('자유 지원')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    이력서 보내기
+                </button>
+                <a href="board.html" class="btn btn-secondary" id="btn-ask-careers">
+                    채용 문의하기
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ══════════ 지원 모달 ══════════ -->
+    <div id="apply-modal" class="cr-modal" role="dialog" aria-modal="true" aria-labelledby="modal-job-title">
+        <div class="cr-modal-box glass-panel">
+            <button class="cr-modal-close" aria-label="닫기" onclick="closeApplyModal()">✕</button>
+            <div class="cr-modal-header">
+                <span class="cr-modal-emoji" aria-hidden="true">📩</span>
+                <div>
+                    <p class="cr-modal-sub">지원하려는 포지션</p>
+                    <h3 id="modal-job-title">포지션명</h3>
+                </div>
+            </div>
+            <form id="apply-form" onsubmit="submitApply(event)">
+                <div class="cr-form-row">
+                    <label for="ap-name">이름 <span aria-hidden="true">*</span></label>
+                    <input type="text" id="ap-name" placeholder="홍길동" required>
+                </div>
+                <div class="cr-form-row">
+                    <label for="ap-email">이메일 <span aria-hidden="true">*</span></label>
+                    <input type="email" id="ap-email" placeholder="name@email.com" required>
+                </div>
+                <div class="cr-form-row">
+                    <label for="ap-phone">연락처</label>
+                    <input type="tel" id="ap-phone" placeholder="010-0000-0000">
+                </div>
+                <div class="cr-form-row">
+                    <label for="ap-portfolio">GitHub / 포트폴리오 URL</label>
+                    <input type="url" id="ap-portfolio" placeholder="https://github.com/yourname">
+                </div>
+                <div class="cr-form-row">
+                    <label for="ap-message">자기소개 / 지원 동기 <span aria-hidden="true">*</span></label>
+                    <textarea id="ap-message" rows="4" placeholder="간단하게 본인을 소개해 주세요. 어떤 것을 만들었고, 왜 Nextep Dynamics에 합류하고 싶은지 알려주세요." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary cr-submit-btn">지원서 제출하기 🚀</button>
+            </form>
+            <p class="cr-modal-note">* 제출 후 24시간 내 담당자가 연락드립니다.</p>
+        </div>
+    </div>
+    <div class="cr-modal-backdrop" id="modal-backdrop" onclick="closeApplyModal()"></div>
+
+    <!-- Toast -->
+    <div id="toast-container" aria-live="polite"></div>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-logo">NEXTEP<span>DYNAMICS</span></div>
+            <p>Powered by Future Robot Lab</p>
+            <p class="copyright">© 2026 Nextep Dynamics. All rights reserved.</p>
+            <div class="footer-disclaimer" role="note" aria-label="포트폴리오 안내">
+                <span class="footer-disclaimer-icon">⚠️</span>
+                <p><strong>포트폴리오 안내:</strong> 본 웹사이트는 웹 개발 포트폴리오 용도로 제작되었으며, 기재된 기업·기술·기관(미래 로봇랩 포함) 관련 내용은 모두 <strong>가상의 설정</strong>입니다.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="careers.js"></script>
+</body>
+</html>

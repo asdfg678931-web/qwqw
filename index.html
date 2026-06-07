@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nextep Dynamics | Next Step in Robotics</title>
+    <meta name="description" content="미래 로봇랩의 혁신적인 기술력을 바탕으로 설립된 첨단 로보틱스 기업 Nextep Dynamics. 이족보행, 서빙 로봇, AI 비전 솔루션 등 6개 제품 라인업을 보유합니다.">
+    <meta name="theme-color" content="#00e5ff">
+    <meta name="color-scheme" content="dark">
+    <!-- Favicon & Manifest -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:title"       content="Nextep Dynamics | 로봇의 미래를 만드는 스타트업">
+    <meta property="og:description" content="이족보행·서빙·스마트팩토리·방산까지, 미래 로봇랩에서 탄생한 6개 제품 라인업">
+    <meta property="og:url"         content="https://nextep-dynamics.kr">
+    <meta property="og:locale"      content="ko_KR">
+    <meta property="og:image"       content="https://nextep-dynamics.kr/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="Nextep Dynamics">
+    <meta name="twitter:description" content="로봇의 미래를 만드는 스타트업 — 6개 제품, 6개 사업 전략">
+    <meta name="twitter:image"       content="https://nextep-dynamics.kr/og-image.png">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://nextep-dynamics.kr">
+    <!-- Preconnect (fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index-hero.css">
+    <!-- JSON-LD: Organization 구조화 데이터 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Nextep Dynamics",
+      "url": "https://nextep-dynamics.kr",
+      "logo": "https://nextep-dynamics.kr/favicon.svg",
+      "description": "미래 로봇랩의 혁신적인 기술력을 바탕으로 설립된 첨단 로보틱스 기업",
+      "foundingDate": "2026",
+      "knowsAbout": ["로보틱스", "AI", "자율주행", "스마트팩토리"],
+      "sameAs": []
+    }
+    </script>
+</head>
+<body>
+    <!-- 스크롤 진행 바 -->
+    <div id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- 접근성을 위한 본문 건너뛰기 링크 -->
+    <a href="#main-content" class="skip-link">본문 바로가기</a>
+
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="메인 네비게이션">
+        <div class="nav-container">
+            <a href="#" class="logo" aria-label="홈으로 이동">NEXTEP<span>DYNAMICS</span></a>
+            <ul class="nav-links">
+                <li><a href="about.html" class="nav-item">회사소개</a></li>
+                <li><a href="#products" class="nav-item">제품소개</a></li>
+                <li><a href="business.html" class="nav-item">사업분야</a></li>
+                <li><a href="careers.html" class="nav-item">인재채용</a></li>
+                <li><a href="board.html" class="nav-item">고객게시판</a></li>
+            </ul>
+            <button class="hamburger" aria-label="메뉴 열기" aria-expanded="false" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section (Company Intro) -->
+        <section id="home" class="hero hero-v2">
+            <!-- Canvas 파티클 배경 -->
+            <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+            <!-- 배경 그리드 오버레이 -->
+            <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+            <!-- 좌측 수직 텍스트 -->
+            <div class="hero-side-label" aria-hidden="true">NEXTEP DYNAMICS · ROBOTICS · AI · 2026</div>
+
+            <!-- 메인 콘텐츠 -->
+            <div class="hero-content">
+                <div class="hero-badge-wrap fade-in-up">
+                    <span class="badge">Born from Future Robot Lab</span>
+                    <span class="hero-live-dot" aria-label="라이브 상태"><span class="dot-inner"></span>LIVE</span>
+                </div>
+
+                <h1 class="fade-in-up delay-1">Next Step in<br>
+                    <span class="gradient-text typewriter-wrap">
+                        <span id="typewriter"></span><span class="cursor">|</span>
+                    </span>
+                </h1>
+
+                <p class="fade-in-up delay-2">
+                    미래 로봇랩의 독보적인 연구 성과가 세상을 바꿉니다.<br>
+                    소프트웨어와 하드웨어의 완벽한 융합으로 미래 산업의 새로운 기준을 제시합니다.
+                </p>
+
+                <div class="hero-actions fade-in-up delay-3">
+                    <a href="#products" class="btn btn-primary btn-glow" tabindex="0" id="btn-products">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        제품 라인업 보기
+                    </a>
+                    <a href="#department" class="btn btn-secondary" tabindex="0" id="btn-tech">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        핵심 기술력 확인
+                    </a>
+                </div>
+            </div>
+
+            <!-- 플로팅 통계 카드 -->
+            <div class="hero-stats fade-in-up delay-3" aria-label="Nextep Dynamics 핵심 지표">
+                <div class="hstat" tabindex="0">
+                    <span class="hstat-num" id="hc-robots">0</span><span class="hstat-unit">개</span>
+                    <span class="hstat-label">자체 개발 로봇</span>
+                </div>
+                <div class="hstat-divider" aria-hidden="true"></div>
+                <div class="hstat" tabindex="0">
+                    <span class="hstat-num" id="hc-tech">0</span><span class="hstat-unit">+</span>
+                    <span class="hstat-label">핵심 기술 스택</span>
+                </div>
+                <div class="hstat-divider" aria-hidden="true"></div>
+                <div class="hstat" tabindex="0">
+                    <span class="hstat-num" id="hc-year">0</span><span class="hstat-unit"></span>
+                    <span class="hstat-label">설립 연도</span>
+                </div>
+            </div>
+
+            <!-- 스크롤 인디케이터 -->
+            <a href="#products" class="scroll-indicator" aria-label="아래로 스크롤" tabindex="0">
+                <span class="scroll-text">SCROLL</span>
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </a>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="portfolio" aria-labelledby="products-title">
+            <div class="section-title">
+                <h2 id="products-title">Products & Solutions</h2>
+                <p>혁신적인 자체 개발 로보틱스 라인업</p>
+            </div>
+            
+            <div class="portfolio-container">
+                <!-- Product 1: Bipedal -->
+                <div class="portfolio-feature slide-in-left">
+                    <div class="feature-img" tabindex="0">
+                        <img src="hero.webp" alt="험지를 돌파하는 고기동 재난구조용 이족보행 로봇 전신 모습" loading="lazy" onload="this.classList.add('loaded'); this.parentNode.classList.add('img-ready');" width="600" height="450">
+                    </div>
+                    <div class="feature-text">
+                        <h3>1. 고기동 재난구조용 이족보행 로봇 <span class="flagship-badge">플래그십</span></h3>
+                        <p class="highlight-text">험지 돌파 및 인명 구조에 특화된 휴머노이드 시스템</p>
+                        <p>비정형 환경에서도 안정적으로 자세를 유지하는 실시간 밸런싱 제어 알고리즘과 라이다(LiDAR) 기반 3D 지형 매핑 기술이 집약된 플래그십 모델입니다. 고출력 모터와 자체 설계된 관절 구조를 통해 극한의 재난 현장에서 인명 구조 임무를 수행합니다.</p>
+                        
+                        <!-- 추가된 전문성 영역: 기술 스펙 -->
+                        <div class="tech-specs glass-panel-small">
+                            <div class="spec-item" tabindex="0">
+                                <span class="spec-label">제어 주기</span>
+                                <span class="spec-value">1ms 이하 초저지연 Real-time Linux</span>
+                            </div>
+                            <div class="spec-item" tabindex="0">
+                                <span class="spec-label">DOF (자유도)</span>
+                                <span class="spec-value">하체 12자유도 액추에이터 자체 설계</span>
+                            </div>
+                            <div class="spec-item" tabindex="0">
+                                <span class="spec-label">센서 퓨전</span>
+                                <span class="spec-value">3D LiDAR + 9축 IMU 데이터 융합</span>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span class="tag">실시간 밸런싱 제어</span>
+                            <span class="tag">LiDAR 3D 매핑</span>
+                            <span class="tag">C/C++</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: F&B Serving -->
+                <div class="portfolio-feature reverse slide-in-right">
+                    <div class="feature-img" tabindex="0">
+                        <img src="serving.webp" alt="고급 레스토랑에서 부드럽게 주행 중인 지능형 F&B 서빙 로봇" loading="lazy" onload="this.classList.add('loaded'); this.parentNode.classList.add('img-ready');" width="600" height="450">
+                    </div>
+                    <div class="feature-text">
+                        <h3>2. 지능형 F&B 맞춤형 서빙 및 관제 로봇</h3>
+                        <p class="highlight-text">현장 경험에서 탄생한 자율주행과 AI 비전 기반 스마트 관제</p>
+                        <p><strong>아웃백 스테이크하우스</strong>처럼 바쁘고 복잡한 외식업 현장에서 직접 근무하며 겪었던 동선 꼬임과 돌발 상황들을 해결하기 위해 기획되었습니다. 단순한 경로 이동을 넘어 매장 내 장애물을 유연하게 회피하며, 실제 매장 경험을 바탕으로 기획된 꼭 필요한 기능만 압축한 웹 대시보드(Firebase 연동)를 통해 관리자가 매장 전체를 직관적으로 관제할 수 있습니다.</p>
+                        
+                        <!-- 추가된 동적 기능 영역: 라이브 관제 대시보드 -->
+                        <div class="live-dashboard glass-panel-small" aria-label="서빙 로봇 실시간 모니터링 데모" tabindex="0">
+                            <div class="dashboard-header">
+                                <span class="dot pulse"></span>
+                                <span class="dashboard-title">실시간 관제 서버 연동 중...</span>
+                            </div>
+                            <div class="dashboard-body">
+                                <div class="dash-row">
+                                    <span class="dash-label">현재 상태:</span>
+                                    <span class="dash-value highlight-text" id="live-status">자율 주행 중</span>
+                                </div>
+                                <div class="dash-row">
+                                    <span class="dash-label">배터리 잔량:</span>
+                                    <div class="battery-container" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="battery-bar" id="live-battery" style="width: 82%;"></div>
+                                    </div>
+                                    <span class="dash-value" id="live-battery-text">82%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span class="tag">자율주행(SLAM)</span>
+                            <span class="tag">비전 AI</span>
+                            <span class="tag">Firebase 관제 대시보드</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Smart Factory -->
+                <div class="portfolio-feature slide-in-left">
+                    <div class="feature-img" tabindex="0">
+                        <img src="factory.webp" alt="레이저 스캐닝과 카메라로 조립 라인을 검사하는 스마트팩토리 AI 비전 시스템" loading="lazy" onload="this.classList.add('loaded'); this.parentNode.classList.add('img-ready');" width="600" height="450">
+                    </div>
+                    <div class="feature-text">
+                        <h3>3. 스마트팩토리 통합 AI 비전 솔루션</h3>
+                        <p class="highlight-text">초저지연 통신 기반의 실시간 딥러닝 불량 검출</p>
+                        <p>공장 조립 라인을 지나가는 부품의 미세한 불량을 즉각적으로 찾아내고 하드웨어를 제어하는 통합 솔루션입니다. Python/C# 기반으로 구축된 AI 딥러닝 뇌(Brain)와 PLC 등 공장 제어 기기 간의 초저지연 통신을 통해 수율을 극대화합니다.</p>
+                        <div class="tech-stack">
+                            <span class="tag">딥러닝 이미지 분류</span>
+                            <span class="tag">PLC 통신</span>
+                            <span class="tag">Python / C#</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Desktop Companion -->
+                <div class="portfolio-feature reverse slide-in-right">
+                    <div class="feature-img" tabindex="0">
+                        <img src="desktop.webp" alt="책상 위에 놓인 귀엽고 세련된 디자인의 소형 데스크탑 반려 로봇" loading="lazy" onload="this.classList.add('loaded'); this.parentNode.classList.add('img-ready');" width="600" height="450">
+                    </div>
+                    <div class="feature-text">
+                        <h3>4. 커스텀 가능 데스크탑 AI 반려 로봇</h3>
+                        <p class="highlight-text">나만의 비서이자 친구, B2C 타겟형 소형 로봇</p>
+                        <p>책상 위에 두고 업무 일정을 관리하거나 감정을 표현하며 상호작용하는 스마트 로봇입니다. 사용자가 직접 코드를 수정하여 로봇의 성격이나 LED 동작을 커스텀할 수 있는 개방성을 지니고 있어, 일반 소비자들의 코딩 교육 및 일상 보조 역할로 탁월한 기획력을 보여줍니다.</p>
+                        <div class="tech-stack">
+                            <span class="tag">음성 인식/합성</span>
+                            <span class="tag">아두이노(Arduino)</span>
+                            <span class="tag">오픈소스 커스텀</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Quadruped (추가 제품 1) -->
+                <div class="portfolio-feature slide-in-left">
+                    <div class="feature-img" tabindex="0">
+                        <img src="feature.webp" alt="무인 드론 격납 공간을 갖추고 험지를 돌파하는 사족보행 로봇 플랫폼" loading="lazy" onload="this.classList.add('loaded'); this.parentNode.classList.add('img-ready');" width="600" height="450">
+                    </div>
+                    <div class="feature-text">
+                        <h3>5. 험지 개척용 사족보행 로봇 및 드론 격납 스테이션</h3>
+                        <p class="highlight-text">플래그십 이족보행 로봇과 연계되는 공중/지상 복합 정찰 플랫폼</p>
+                        <p>이족보행 로봇이 진입하기 전, 붕괴 위험 지역을 먼저 탐색하는 사족보행(Quadruped) 로봇 플랫폼입니다.</p>
+                        <p>C++ 기반의 역운동학(IK) 알고리즘으로 불규칙한 지형에서도 자세를 안정적으로 유지하며, 상단의 무인 드론 격납 스테이션을 통해 공중 수색 드론과 실시간 3D 매핑 데이터를 동기화합니다. 재난구조 휴머노이드의 작전 효율을 극대화하는 선행 정찰 솔루션입니다.</p>
+                        <div class="tech-stack">
+                            <span class="tag">역운동학(IK) 제어</span>
+                            <span class="tag">드론 군집 매핑</span>
+                            <span class="tag">C++ / ROS2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6: Smart Packaging (추가 제품 2) -->
+                <div class="portfolio-feature reverse slide-in-right">
+                    <div class="feature-img" tabindex="0">
+                        <img src="cobot.webp" alt="6축 협동 로봇 암이 AI 비전으로 제품을 실시간 분류·패키징하는 스마트팩토리 자동화 시스템" loading="lazy" onload="this.classList.add('loaded'); this.parentNode.classList.add('img-ready');" width="600" height="450">
+                    </div>
+                    <div class="feature-text">
+                        <h3>6. 협동 로봇 암(Arm) 연동 스마트 패키징 솔루션</h3>
+                        <p class="highlight-text">24시간 무인 가동을 위한 비전 AI 및 모션 제어 통합</p>
+                        <p>Python/C# 딥러닝 비전으로 불량을 검출한 후, 6축 협동 로봇 암과 PLC 통신을 통해 정상품과 불량품을 자동 분류·패키징하는 통합 자동화 시스템입니다.</p>
+                        <p>초당 5개 이상의 물체를 실시간 추적(Object Tracking)하여 생산 라인 중단 없이 <strong>24시간 완전 무인 가동</strong>이 가능합니다. 스마트팩토리 고도화의 핵심 솔루션입니다.</p>
+                        <div class="tech-stack">
+                            <span class="tag">Object Tracking</span>
+                            <span class="tag">로봇 암 모션 제어</span>
+                            <span class="tag">공장 자동화 통합</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section id="impact" class="impact-section" aria-labelledby="impact-title">
+            <div class="impact-inner">
+                <div class="section-title fade-in">
+                    <h2 id="impact-title">숫자로 증명합니다</h2>
+                    <p>Nextep Dynamics 솔루션 도입 후 실측 데이터</p>
+                </div>
+
+                <div class="impact-grid fade-in">
+
+                    <div class="impact-card" tabindex="0">
+                        <div class="impact-tag">불량률 감소</div>
+                        <div class="impact-num-wrap">
+                            <span class="impact-num" id="ic-defect">87</span>
+                            <span class="impact-unit">%</span>
+                        </div>
+                        <div class="impact-bar-wrap" aria-hidden="true">
+                            <div class="impact-bar" style="--pct:87%"></div>
+                        </div>
+                        <p class="impact-desc">AI 비전 솔루션 도입 매장·공장 기준<br>평균 <strong>87% 불량률 감소</strong> 실측</p>
+                    </div>
+
+                    <div class="impact-card" tabindex="0">
+                        <div class="impact-tag">운영 효율 향상</div>
+                        <div class="impact-num-wrap">
+                            <span class="impact-num" id="ic-efficiency">43</span>
+                            <span class="impact-unit">%</span>
+                        </div>
+                        <div class="impact-bar-wrap" aria-hidden="true">
+                            <div class="impact-bar" style="--pct:43%"></div>
+                        </div>
+                        <p class="impact-desc">서빙 로봇 도입 매장<br>주문 처리 속도 <strong>43% 향상</strong></p>
+                    </div>
+
+                    <div class="impact-card" tabindex="0">
+                        <div class="impact-tag">인건비 절감</div>
+                        <div class="impact-num-wrap">
+                            <span class="impact-num" id="ic-cost">62</span>
+                            <span class="impact-unit">%</span>
+                        </div>
+                        <div class="impact-bar-wrap" aria-hidden="true">
+                            <div class="impact-bar" style="--pct:62%"></div>
+                        </div>
+                        <p class="impact-desc">RaaS 구독 모델 도입 시<br>기존 대비 <strong>62% 인건비 절감</strong></p>
+                    </div>
+
+                    <div class="impact-card" tabindex="0">
+                        <div class="impact-tag">ROI 회수 기간</div>
+                        <div class="impact-num-wrap">
+                            <span class="impact-num" id="ic-roi">8</span>
+                            <span class="impact-unit">개월</span>
+                        </div>
+                        <div class="impact-bar-wrap" aria-hidden="true">
+                            <div class="impact-bar" style="--pct:30%"></div>
+                        </div>
+                        <p class="impact-desc">스마트팩토리 솔루션 기준<br>평균 <strong>8개월 내 투자 회수</strong></p>
+                    </div>
+
+                </div>
+
+                <div class="tech-badges fade-in" aria-label="사용 기술 스택">
+                    <span class="tech-badge">C / C++</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">ROS2</span>
+                    <span class="tech-badge">YOLOv8</span>
+                    <span class="tech-badge">PyTorch</span>
+                    <span class="tech-badge">Firebase</span>
+                    <span class="tech-badge">RT-Linux</span>
+                    <span class="tech-badge">LiDAR SLAM</span>
+                    <span class="tech-badge">STM32</span>
+                    <span class="tech-badge">Nav2</span>
+                    <span class="tech-badge">OpenCV</span>
+                    <span class="tech-badge">ONNX Runtime</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CTA Section -->
+        <section id="contact" class="cta-section" aria-labelledby="cta-main-title">
+            <div class="cta-bg-glow" aria-hidden="true"></div>
+            <div class="cta-inner">
+                <span class="cta-eyebrow fade-in-up">함께 만드는 미래</span>
+                <h2 id="cta-main-title" class="fade-in-up delay-1">
+                    로봇 솔루션 도입을<br>
+                    <span class="gradient-text">지금 시작하세요</span>
+                </h2>
+                <p class="cta-desc fade-in-up delay-2">
+                    제품 도입 문의, 기술 협력, 투자 제안, 인재 채용 —<br>
+                    어떤 형태든 Nextep Dynamics의 문은 열려 있습니다.
+                </p>
+
+                <div class="cta-cards fade-in-up delay-3">
+                    <a href="board.html" class="cta-card" id="cta-card-inquiry" tabindex="0">
+                        <div class="cta-card-icon" aria-hidden="true">💬</div>
+                        <strong>제품 도입 문의</strong>
+                        <span>게시판에서 빠르게 문의하세요. 24시간 내 답변드립니다.</span>
+                        <span class="cta-card-arrow">→</span>
+                    </a>
+                    <a href="business.html" class="cta-card" id="cta-card-biz" tabindex="0">
+                        <div class="cta-card-icon" aria-hidden="true">🤝</div>
+                        <strong>파트너십 · 투자</strong>
+                        <span>B2B/B2G 파트너십, 기술 협력, 투자 관련 제안을 환영합니다.</span>
+                        <span class="cta-card-arrow">→</span>
+                    </a>
+                    <a href="careers.html" class="cta-card" id="cta-card-hire" tabindex="0">
+                        <div class="cta-card-icon" aria-hidden="true">🚀</div>
+                        <strong>인재 채용</strong>
+                        <span>로봇의 미래를 함께 만들 엔지니어를 모집합니다.</span>
+                        <span class="cta-card-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" aria-live="polite"></div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-logo">NEXTEP<span>DYNAMICS</span></div>
+            <p>Powered by Future Robot Lab</p>
+            <p class="copyright">© 2026 Nextep Dynamics. All rights reserved.</p>
+            <div class="footer-disclaimer" role="note" aria-label="포트폴리오 안내">
+                <span class="footer-disclaimer-icon">⚠️</span>
+                <p><strong>포트폴리오 안내:</strong> 본 웹사이트는 웹 개발 포트폴리오 용도로 제작되었으며, 기재된 기업·기술·기관(미래 로봇랩 포함) 관련 내용은 모두 <strong>가상의 설정</strong>입니다.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase Compat 라이브러리 (로컬 환경 지원용) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
